@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bangkok GIS Risk + Access Prototype</title>
+    <meta
+      name="description"
+      content="Interactive Bangkok GIS prototype using district boundaries, flood x zoning scenarios, accessibility rings, and story-map views."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQPDzTO9iAA6tmI3H9JZHczC9P4bJdg="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"
+    ></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="map-app">
+      <aside class="control-panel" aria-label="Map controls">
+        <header class="brand-block">
+          <p class="eyebrow">Bangkok GIS prototype</p>
+          <h1>
+            <span>Flood</span>
+            <span>Zoning</span>
+            <span>Access</span>
+          </h1>
+          <p class="lead">
+            Boundary กทม. จาก prasertcbs/thailand_gis<br />
+            ใช้ tile CDN เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง
+          </p>
+        </header>
+
+        <section aria-labelledby="mode-heading">
+          <h2 id="mode-heading">โจทย์ที่ render บนแผนที่</h2>
+          <div class="mode-stack" id="modeStack"></div>
+        </section>
+
+        <section aria-labelledby="search-heading">
+          <div class="section-row">
+            <h2 id="search-heading">ค้นหาเขต</h2>
+            <span id="featureCount">50 เขต</span>
+          </div>
+          <label class="search-box">
+            <span>ชื่อเขตหรือรหัส</span>
+            <input id="districtSearch" type="search" placeholder="บางนา, 1047, Khlong Toei" />
+          </label>
+          <div class="district-list" id="districtList"></div>
+        </section>
+
+        <section aria-labelledby="data-heading" class="data-note">
+          <h2 id="data-heading">ข้อมูลใน prototype</h2>
+          <p>
+            ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. คะแนนน้ำท่วม, zoning และ
+            accessibility เป็น scenario layer สำหรับออกแบบ workflow ก่อนต่อข้อมูลทางการ.
+          </p>
+          <a
+            href="https://github.com/prasertcbs/thailand_gis/tree/main/bangkok/district"
+            target="_blank"
+            rel="noreferrer"
+            >Bangkok district source</a
+          >
+        </section>
+      </aside>
+
+      <main class="map-stage" aria-label="Bangkok interactive map">
+        <div id="map" class="map-canvas"></div>
+        <div class="map-topbar">
+          <div>
+            <p class="eyebrow">Active view</p>
+            <strong id="activeTitle">Flood x Zoning</strong>
+          </div>
+          <div class="layer-toggles" aria-label="Layer toggles">
+            <label>
+              <input id="toggleFlood" type="checkbox" checked />
+              Flood
+            </label>
+            <label>
+              <input id="toggleAccess" type="checkbox" checked />
+              Access rings
+            </label>
+            <label>
+              <input id="togglePoi" type="checkbox" checked />
+              POI
+            </label>
+          </div>
+        </div>
+
+        <div class="legend" id="legend"></div>
+      </main>
+
+      <aside class="inspector" aria-label="Selected district details">
+        <section class="district-card">
+          <p class="eyebrow" id="selectedCode">1047</p>
+          <h2 id="selectedName">เขตบางนา</h2>
+          <p id="selectedSummary">
+            เลือกเขตบนแผนที่เพื่อดู flood, zoning และ accessibility score
+          </p>
+
+          <div class="metric-stack" id="metricStack"></div>
+
+          <div class="download-actions">
+            <a id="downloadPng" target="_blank" rel="noreferrer">PNG map</a>
+            <a id="downloadPdf" target="_blank" rel="noreferrer">PDF zoning</a>
+          </div>
+        </section>
+
+        <section class="story-panel">
+          <div class="section-row">
+            <h2>Story map</h2>
+            <span>3 scenes</span>
+          </div>
+          <div class="story-list" id="storyList"></div>
+        </section>
+
+        <section class="workflow-panel">
+          <h2>Next GIS workflow</h2>
+          <ol>
+            <li>แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data</li>
+            <li>ต่อ zoning polygon หรือ digitize จากผังเมือง PDF</li>
+            <li>ดึง POI/transport จาก OSM, GTFS หรือหน่วยงานเมือง</li>
+            <li>คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี</li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>
