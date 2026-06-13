@@ -9,8 +9,8 @@ const modes = [
   },
   {
     id: "access",
-    title: "Accessibility map",
-    description: "ดูการเข้าถึง transit, park, hospital และศูนย์บริการแบบ 5/10/15 นาที",
+    title: "Accessibility proxy",
+    description: "ดู access score จาก OSM POI snapshot ด้วยรัศมี 450/900/1350 เมตร",
   },
   {
     id: "story",
@@ -18,59 +18,6 @@ const modes = [
     description: "เล่าเรื่องคลองเตย-พระโขนง-บางนา, ลาดกระบัง, บางขุนเทียน",
   },
 ];
-
-const districtProfiles = {
-  1001: ["พระนคร", "Phra Nakhon", "core", "mixed heritage", 58, 82, 72],
-  1002: ["ดุสิต", "Dusit", "core", "civic residential", 55, 76, 68],
-  1003: ["หนองจอก", "Nong Chok", "east", "agricultural edge", 67, 38, 46],
-  1004: ["บางรัก", "Bang Rak", "core", "commercial core", 52, 92, 84],
-  1005: ["บางเขน", "Bang Khen", "north", "residential", 49, 62, 58],
-  1006: ["บางกะปิ", "Bang Kapi", "east", "mixed residential", 61, 68, 66],
-  1007: ["ปทุมวัน", "Pathum Wan", "core", "commercial core", 44, 96, 88],
-  1008: ["ป้อมปราบศัตรูพ่าย", "Pom Prap Sattru Phai", "core", "mixed heritage", 54, 88, 80],
-  1009: ["พระโขนง", "Phra Khanong", "east", "transit mixed-use", 68, 86, 82],
-  1010: ["มีนบุรี", "Min Buri", "east", "suburban mixed", 70, 45, 52],
-  1011: ["ลาดกระบัง", "Lat Krabang", "east", "logistics industrial", 82, 50, 60],
-  1012: ["ยานนาวา", "Yan Nawa", "core", "river mixed-use", 66, 78, 73],
-  1013: ["สัมพันธวงศ์", "Samphanthawong", "core", "commercial heritage", 62, 91, 82],
-  1014: ["พญาไท", "Phaya Thai", "core", "transit mixed-use", 48, 91, 84],
-  1015: ["ธนบุรี", "Thon Buri", "west", "river residential", 63, 73, 68],
-  1016: ["บางกอกใหญ่", "Bangkok Yai", "west", "river heritage", 61, 66, 62],
-  1017: ["ห้วยขวาง", "Huai Khwang", "core", "mixed residential", 56, 83, 76],
-  1018: ["คลองสาน", "Khlong San", "west", "river mixed-use", 59, 79, 74],
-  1019: ["ตลิ่งชัน", "Taling Chan", "west", "low-rise residential", 64, 45, 48],
-  1020: ["บางกอกน้อย", "Bangkok Noi", "west", "river mixed-use", 60, 70, 64],
-  1021: ["บางขุนเทียน", "Bang Khun Thian", "west", "coastal ecological", 91, 36, 55],
-  1022: ["ภาษีเจริญ", "Phasi Charoen", "west", "residential mixed", 57, 63, 60],
-  1023: ["หนองแขม", "Nong Khaem", "west", "suburban residential", 62, 44, 49],
-  1024: ["ราษฎร์บูรณะ", "Rat Burana", "west", "industrial river", 72, 58, 63],
-  1025: ["บางพลัด", "Bang Phlat", "west", "river residential", 58, 71, 65],
-  1026: ["ดินแดง", "Din Daeng", "core", "high-density residential", 52, 85, 80],
-  1027: ["บึงกุ่ม", "Bueng Kum", "east", "residential", 63, 57, 58],
-  1028: ["สาทร", "Sathon", "core", "commercial core", 50, 92, 84],
-  1029: ["บางซื่อ", "Bang Sue", "north", "rail interchange", 55, 83, 78],
-  1030: ["จตุจักร", "Chatuchak", "north", "transit park", 48, 88, 84],
-  1031: ["บางคอแหลม", "Bang Kho Laem", "core", "river mixed-use", 65, 74, 70],
-  1032: ["ประเวศ", "Prawet", "east", "suburban mixed", 66, 50, 57],
-  1033: ["คลองเตย", "Khlong Toei", "core", "port mixed-use", 74, 87, 86],
-  1034: ["สวนหลวง", "Suan Luang", "east", "residential mixed", 59, 65, 63],
-  1035: ["จอมทอง", "Chom Thong", "west", "residential", 61, 55, 56],
-  1036: ["ดอนเมือง", "Don Mueang", "north", "airport urban edge", 57, 52, 58],
-  1037: ["ราชเทวี", "Ratchathewi", "core", "transit commercial", 45, 93, 86],
-  1038: ["ลาดพร้าว", "Lat Phrao", "north", "residential mixed", 56, 65, 64],
-  1039: ["วัฒนา", "Watthana", "core", "commercial residential", 53, 93, 87],
-  1040: ["บางแค", "Bang Khae", "west", "suburban mixed", 58, 54, 56],
-  1041: ["หลักสี่", "Lak Si", "north", "civic residential", 51, 62, 61],
-  1042: ["สายไหม", "Sai Mai", "north", "suburban residential", 54, 43, 49],
-  1043: ["คันนายาว", "Khan Na Yao", "east", "residential", 60, 51, 55],
-  1044: ["สะพานสูง", "Saphan Sung", "east", "residential", 64, 48, 53],
-  1045: ["วังทองหลาง", "Wang Thonglang", "east", "residential mixed", 57, 67, 64],
-  1046: ["คลองสามวา", "Khlong Sam Wa", "east", "canal suburban", 75, 39, 50],
-  1047: ["บางนา", "Bang Na", "east", "transit industrial edge", 76, 79, 82],
-  1048: ["ทวีวัฒนา", "Thawi Watthana", "west", "green suburban", 55, 37, 48],
-  1049: ["ทุ่งครุ", "Thung Khru", "west", "residential industrial", 66, 46, 52],
-  1050: ["บางบอน", "Bang Bon", "west", "industrial residential", 67, 43, 51],
-};
 
 const storyScenes = [
   {
@@ -99,33 +46,15 @@ const storyScenes = [
   },
 ];
 
-const poi = [
-  ["transit", "Siam", 13.7455, 100.5347],
-  ["transit", "Asok / Sukhumvit", 13.737, 100.56],
-  ["transit", "Bang Na", 13.6681, 100.6047],
-  ["transit", "Mo Chit", 13.8026, 100.5538],
-  ["transit", "Bang Wa", 13.7207, 100.4578],
-  ["transit", "Lat Krabang ARL", 13.7278, 100.7487],
-  ["park", "Lumphini Park", 13.7314, 100.5417],
-  ["park", "Chatuchak Park", 13.8074, 100.5551],
-  ["park", "Benjakitti Park", 13.7308, 100.5588],
-  ["park", "Nong Bon Park", 13.684, 100.663],
-  ["hospital", "Siriraj Hospital", 13.7563, 100.4852],
-  ["hospital", "Chulalongkorn Hospital", 13.731, 100.5356],
-  ["hospital", "Rajavithi Hospital", 13.7664, 100.534],
-  ["hospital", "Bang Na Hospital", 13.6709, 100.6187],
-  ["service", "Bangkok City Hall", 13.7563, 100.5018],
-  ["service", "Khlong Toei District Office", 13.7137, 100.5717],
-  ["service", "Lat Krabang District Office", 13.722, 100.78],
-  ["service", "Bang Khun Thian District Office", 13.663, 100.435],
-].map(([type, name, lat, lng]) => ({ type, name, lat, lng }));
-
 const state = {
   mode: "flood",
   query: "",
   selectedCode: "1047",
   activeStory: null,
   geojson: null,
+  metrics: null,
+  manifest: null,
+  poi: [],
   featureLayer: null,
   accessLayer: null,
   poiLayer: null,
@@ -147,26 +76,54 @@ const els = {
   downloadPng: document.querySelector("#downloadPng"),
   downloadPdf: document.querySelector("#downloadPdf"),
   storyList: document.querySelector("#storyList"),
+  dataFreshness: document.querySelector("#dataFreshness"),
   toggleFlood: document.querySelector("#toggleFlood"),
   toggleAccess: document.querySelector("#toggleAccess"),
   togglePoi: document.querySelector("#togglePoi"),
 };
 
+function scoreOrDefault(value, fallback = 50) {
+  return Number.isFinite(value) ? value : fallback;
+}
+
 function getProfile(code) {
-  const [name, english, region, zoning, flood, access, pressure] =
-    districtProfiles[code] || ["ไม่ทราบเขต", "Unknown", "core", "mixed", 50, 50, 50];
+  const id = String(code).padStart(4, "0");
+  const district = state.metrics?.districts?.[id];
+  if (!district) {
+    return {
+      code: id,
+      name: "ไม่ทราบเขต",
+      english: "Unknown",
+      region: "unknown",
+      zoning: "scenario pending",
+      flood: 50,
+      access: 50,
+      pressure: 50,
+      png: `${SOURCE_BASE}/${id}.png`,
+      pdf: `${SOURCE_BASE}/${id}.pdf`,
+      raw: null,
+    };
+  }
+
   return {
-    code,
-    name,
-    english,
-    region,
-    zoning,
-    flood,
-    access,
-    pressure,
-    png: `${SOURCE_BASE}/${code}.png`,
-    pdf: `${SOURCE_BASE}/${code}.pdf`,
+    code: id,
+    name: district.name,
+    english: district.english,
+    region: district.region,
+    zoning: district.zoning?.label || "scenario pending",
+    flood: scoreOrDefault(district.flood?.score),
+    access: scoreOrDefault(district.accessibility?.score),
+    pressure: scoreOrDefault(district.pressure?.score),
+    png: district.links?.png || `${SOURCE_BASE}/${id}.png`,
+    pdf: district.links?.pdf || `${SOURCE_BASE}/${id}.pdf`,
+    raw: district,
   };
+}
+
+function profiles() {
+  return Object.keys(state.metrics?.districts || {})
+    .map(getProfile)
+    .sort((a, b) => a.code.localeCompare(b.code));
 }
 
 function riskClass(score) {
@@ -241,15 +198,36 @@ function setupMap() {
     subdomains: "abcd",
     maxZoom: 20,
     attribution:
-      '&copy; OpenStreetMap contributors &copy; CARTO | Boundary: prasertcbs/thailand_gis',
+      '&copy; OpenStreetMap contributors &copy; CARTO | Boundary: prasertcbs/thailand_gis | POI: OpenStreetMap ODbL',
   }).addTo(map);
 }
 
-async function loadDistricts() {
-  const response = await fetch("./data/bangkok_district_topo.json");
-  if (!response.ok) throw new Error("Cannot load Bangkok district TopoJSON");
-  const topology = await response.json();
+async function fetchJson(url, label) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Cannot load ${label}`);
+  return response.json();
+}
+
+async function loadData() {
+  const [topology, metrics, poiCollection, manifest] = await Promise.all([
+    fetchJson("./data/bangkok_district_topo.json", "Bangkok district TopoJSON"),
+    fetchJson("./data/district_metrics.json", "district metrics snapshot"),
+    fetchJson("./data/poi.geojson", "POI snapshot"),
+    fetchJson("./data/data_manifest.json", "data manifest"),
+  ]);
+
   state.geojson = topojson.feature(topology, topology.objects.data);
+  state.metrics = metrics;
+  state.manifest = manifest;
+  state.poi = (poiCollection.features || []).map((feature) => ({
+    id: feature.properties.id,
+    type: feature.properties.category,
+    name: feature.properties.name,
+    lat: feature.geometry.coordinates[1],
+    lng: feature.geometry.coordinates[0],
+    districtCode: feature.properties.district_code,
+    sourceUrl: feature.properties.source_url,
+  }));
 }
 
 function renderFeatureLayer() {
@@ -275,6 +253,24 @@ function renderFeatureLayer() {
   map.fitBounds(state.featureLayer.getBounds(), { padding: [28, 28] });
 }
 
+function accessRingPoi() {
+  const ringCategories = new Set(["transit", "park", "hospital", "service"]);
+  return state.poi.filter(
+    (item) => ringCategories.has(item.type) && item.districtCode === state.selectedCode,
+  );
+}
+
+function visiblePoi() {
+  const selectedDistrictPoi = state.poi.filter((item) => item.districtCode === state.selectedCode);
+  const cityTransitAnchors = state.poi
+    .filter((item) => item.type === "transit")
+    .slice(0, 160);
+  const byId = new Map();
+
+  [...selectedDistrictPoi, ...cityTransitAnchors].forEach((item) => byId.set(item.id, item));
+  return [...byId.values()];
+}
+
 function renderAccessLayers() {
   if (state.accessLayer) state.accessLayer.remove();
   if (state.poiLayer) state.poiLayer.remove();
@@ -283,29 +279,27 @@ function renderAccessLayers() {
   state.poiLayer = L.layerGroup();
 
   if (els.toggleAccess.checked) {
-    poi
-      .filter((item) => item.type === "transit" || item.type === "hospital")
-      .forEach((item) => {
-        [
-          [450, "#23758b", 0.07],
-          [900, "#23758b", 0.045],
-          [1350, "#23758b", 0.028],
-        ].forEach(([radius, color, fillOpacity]) => {
-          L.circle([item.lat, item.lng], {
-            radius,
-            color,
-            weight: 1,
-            opacity: 0.25,
-            fillColor: color,
-            fillOpacity,
-          }).addTo(state.accessLayer);
-        });
+    accessRingPoi().forEach((item) => {
+      [
+        [450, "#23758b", 0.07],
+        [900, "#23758b", 0.045],
+        [1350, "#23758b", 0.028],
+      ].forEach(([radius, color, fillOpacity]) => {
+        L.circle([item.lat, item.lng], {
+          radius,
+          color,
+          weight: 1,
+          opacity: 0.25,
+          fillColor: color,
+          fillOpacity,
+        }).addTo(state.accessLayer);
       });
+    });
     state.accessLayer.addTo(map);
   }
 
   if (els.togglePoi.checked) {
-    poi.forEach((item) => {
+    visiblePoi().forEach((item) => {
       const icon = L.divIcon({
         className: "",
         html: `<div class="poi-marker poi-${item.type}">${poiGlyph(item.type)}</div>`,
@@ -313,7 +307,7 @@ function renderAccessLayers() {
         iconAnchor: [14, 14],
       });
       L.marker([item.lat, item.lng], { icon })
-        .bindTooltip(item.name, { direction: "top" })
+        .bindTooltip(`${item.name}<br>${poiLabel(item.type)} · OSM`, { direction: "top" })
         .addTo(state.poiLayer);
     });
     state.poiLayer.addTo(map);
@@ -321,7 +315,17 @@ function renderAccessLayers() {
 }
 
 function poiGlyph(type) {
-  return { transit: "T", park: "P", hospital: "H", service: "S" }[type];
+  return { transit: "T", park: "P", school: "E", hospital: "H", service: "S" }[type] || "?";
+}
+
+function poiLabel(type) {
+  return {
+    transit: "Transit",
+    park: "Park",
+    school: "School",
+    hospital: "Hospital",
+    service: "Service",
+  }[type];
 }
 
 function renderModes() {
@@ -344,15 +348,12 @@ function renderModes() {
 
 function renderDistrictList() {
   const query = state.query.trim().toLowerCase();
-  const rows = Object.keys(districtProfiles)
-    .map(getProfile)
-    .sort((a, b) => a.code.localeCompare(b.code))
-    .filter((profile) =>
-      [profile.code, profile.name, profile.english, profile.zoning]
-        .join(" ")
-        .toLowerCase()
-        .includes(query),
-    );
+  const rows = profiles().filter((profile) =>
+    [profile.code, profile.name, profile.english, profile.zoning]
+      .join(" ")
+      .toLowerCase()
+      .includes(query),
+  );
 
   els.featureCount.textContent = `${rows.length} เขต`;
   els.districtList.innerHTML = "";
@@ -375,20 +376,36 @@ function renderDistrictList() {
   });
 }
 
+function nearestSummary(accessibility) {
+  const nearest = accessibility?.nearest_meters || {};
+  return [
+    ["transit", "transit"],
+    ["park", "park"],
+    ["school", "school"],
+    ["hospital", "hospital"],
+  ]
+    .map(([key, label]) => {
+      const value = nearest[key];
+      return `${label} ${Number.isFinite(value) ? `${value.toLocaleString()}m` : "n/a"}`;
+    })
+    .join(" · ");
+}
+
 function renderInspector() {
   const profile = getProfile(state.selectedCode);
+  const accessibility = profile.raw?.accessibility;
   els.selectedCode.textContent = profile.code;
   els.selectedName.textContent = `เขต${profile.name}`;
-  els.selectedSummary.textContent = `${profile.english} · ${profile.zoning} · flood risk ${riskLabel(
-    profile.flood,
-  )}. ใช้เป็นจุดเริ่มต้นสำหรับ overlay กับข้อมูลจริง`;
+  els.selectedSummary.textContent = `${profile.english} · ${profile.zoning}. Flood/zoning เป็น scenario; accessibility เป็น OSM walking-distance proxy (${nearestSummary(
+    accessibility,
+  )}).`;
   els.downloadPng.href = profile.png;
   els.downloadPdf.href = profile.pdf;
 
   els.metricStack.innerHTML = [
-    ["Flood exposure", profile.flood, floodColor(profile.flood)],
-    ["Accessibility", profile.access, accessColor(profile.access)],
-    ["Development pressure", profile.pressure, "#6952a3"],
+    ["Flood exposure (scenario)", profile.flood, floodColor(profile.flood)],
+    ["Accessibility proxy (OSM)", profile.access, accessColor(profile.access)],
+    ["Development pressure (scenario)", profile.pressure, "#6952a3"],
   ]
     .map(
       ([label, value, color]) => `
@@ -423,10 +440,10 @@ function renderStories() {
 function renderLegend() {
   const title =
     state.mode === "access"
-      ? "Accessibility score"
+      ? "Accessibility proxy score"
       : state.mode === "story"
         ? "Story focus"
-        : "Flood exposure";
+        : "Flood exposure scenario";
   const rows =
     state.mode === "access"
       ? [
@@ -434,6 +451,7 @@ function renderLegend() {
           ["#2f91a5", "สูง"],
           ["#79a85c", "กลาง"],
           ["#b24a43", "ต่ำ"],
+          ["#23758b", "รัศมี 450/900/1350m"],
         ]
       : state.mode === "story"
         ? [
@@ -454,6 +472,17 @@ function renderLegend() {
         `<div class="legend-row"><span class="legend-swatch" style="background:${color}"></span>${label}</div>`,
     )
     .join("")}`;
+}
+
+function renderDataFreshness() {
+  if (!els.dataFreshness || !state.manifest) return;
+  const generated = new Intl.DateTimeFormat("th-TH", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "Asia/Bangkok",
+  }).format(new Date(state.manifest.generated_at));
+  const counts = state.manifest.record_counts || {};
+  els.dataFreshness.textContent = `Snapshot ${generated} · ${counts.poi_total?.toLocaleString() || 0} POI · OpenStreetMap/ODbL`;
 }
 
 function selectDistrict(code, options = {}) {
@@ -480,6 +509,7 @@ function render() {
   renderInspector();
   renderStories();
   renderLegend();
+  renderDataFreshness();
 
   const mode = modes.find((item) => item.id === state.mode);
   els.activeTitle.textContent = mode.title;
@@ -495,7 +525,7 @@ function showError(error) {
     <div class="map-error">
       <div>
         <strong>Map failed to load</strong>
-        <p>${error.message}. ตรวจว่าเปิดผ่าน local server และเชื่อมต่อ CDN สำหรับ Leaflet/TopoJSON ได้</p>
+        <p>${error.message}. ตรวจว่า static data snapshot มีครบ และเชื่อมต่อ CDN สำหรับ Leaflet/TopoJSON ได้</p>
       </div>
     </div>
   `;
@@ -507,7 +537,7 @@ async function init() {
       throw new Error("Leaflet or TopoJSON CDN is unavailable");
     }
     setupMap();
-    await loadDistricts();
+    await loadData();
     renderFeatureLayer();
     render();
   } catch (error) {

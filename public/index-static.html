@@ -39,7 +39,7 @@
           </h1>
           <p class="lead">
             Boundary กทม. จาก prasertcbs/thailand_gis<br />
-            ใช้ tile CDN เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง
+            ใช้ static data snapshot เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง
           </p>
         </header>
 
@@ -63,9 +63,11 @@
         <section aria-labelledby="data-heading" class="data-note">
           <h2 id="data-heading">ข้อมูลใน prototype</h2>
           <p>
-            ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. คะแนนน้ำท่วม, zoning และ
-            accessibility เป็น scenario layer สำหรับออกแบบ workflow ก่อนต่อข้อมูลทางการ.
+            ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. POI และ accessibility proxy
+            มาจาก OpenStreetMap snapshot. น้ำท่วม, zoning และ development pressure
+            ยังเป็น scenario layer สำหรับออกแบบ workflow.
           </p>
+          <p class="data-freshness" id="dataFreshness">กำลังโหลด metadata...</p>
           <a
             href="https://github.com/prasertcbs/thailand_gis/tree/main/bangkok/district"
             target="_blank"
@@ -89,7 +91,7 @@
             </label>
             <label>
               <input id="toggleAccess" type="checkbox" checked />
-              Access rings
+              Access proxy
             </label>
             <label>
               <input id="togglePoi" type="checkbox" checked />
@@ -128,9 +130,9 @@
         <section class="workflow-panel">
           <h2>Next GIS workflow</h2>
           <ol>
+            <li>Automation ดึง OSM POI เป็น static snapshot ก่อน render</li>
             <li>แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data</li>
             <li>ต่อ zoning polygon หรือ digitize จากผังเมือง PDF</li>
-            <li>ดึง POI/transport จาก OSM, GTFS หรือหน่วยงานเมือง</li>
             <li>คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี</li>
           </ol>
         </section>

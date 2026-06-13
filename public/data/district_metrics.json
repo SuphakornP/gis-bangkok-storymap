@@ -1,0 +1,3462 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-13T15:33:40.631Z",
+  "methodology": {
+    "accessibility": "Weighted straight-line distance proxy from district centroid to OSM transit, park, school, hospital, and service POIs, with a small bonus for POI counts inside the district.",
+    "flood": "Prototype scenario values only.",
+    "zoning": "Prototype scenario labels only.",
+    "development_pressure": "Prototype scenario values only."
+  },
+  "districts": {
+    "1001": {
+      "code": "1001",
+      "name": "พระนคร",
+      "english": "Phra Nakhon",
+      "area_sqm": 5361067,
+      "region": "core",
+      "zoning": {
+        "label": "mixed heritage",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 628,
+          "park": 267,
+          "school": 111,
+          "hospital": 190,
+          "service": 421
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 2,
+            "school": 2,
+            "hospital": 5,
+            "service": 1
+          },
+          "900": {
+            "transit": 3,
+            "park": 9,
+            "school": 14,
+            "hospital": 9,
+            "service": 1
+          },
+          "1350": {
+            "transit": 7,
+            "park": 17,
+            "school": 26,
+            "hospital": 12,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 7,
+          "park": 17,
+          "school": 23,
+          "hospital": 12,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 72,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1001.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1001.pdf"
+      }
+    },
+    "1002": {
+      "code": "1002",
+      "name": "ดุสิต",
+      "english": "Dusit",
+      "area_sqm": 11329900,
+      "region": "core",
+      "zoning": {
+        "label": "civic residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 55,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 91,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 898,
+          "park": 1166,
+          "school": 223,
+          "hospital": 1233,
+          "service": 196
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 5,
+            "hospital": 0,
+            "service": 1
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 10,
+            "hospital": 0,
+            "service": 1
+          },
+          "1350": {
+            "transit": 2,
+            "park": 5,
+            "school": 19,
+            "hospital": 3,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 3,
+          "park": 5,
+          "school": 40,
+          "hospital": 3,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 68,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1002.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1002.pdf"
+      }
+    },
+    "1003": {
+      "code": "1003",
+      "name": "หนองจอก",
+      "english": "Nong Chok",
+      "area_sqm": 240448192,
+      "region": "east",
+      "zoning": {
+        "label": "agricultural edge",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 67,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 67,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 5697,
+          "park": 350,
+          "school": 232,
+          "hospital": 1661,
+          "service": 964
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 2,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 2,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 4,
+            "school": 1,
+            "hospital": 0,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 2,
+          "park": 4,
+          "school": 11,
+          "hospital": 1,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 46,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1003.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1003.pdf"
+      }
+    },
+    "1004": {
+      "code": "1004",
+      "name": "บางรัก",
+      "english": "Bang Rak",
+      "area_sqm": 4012576,
+      "region": "core",
+      "zoning": {
+        "label": "commercial core",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 52,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 602,
+          "park": 208,
+          "school": 344,
+          "hospital": 118,
+          "service": 47
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 1,
+            "school": 2,
+            "hospital": 4,
+            "service": 2
+          },
+          "900": {
+            "transit": 4,
+            "park": 5,
+            "school": 12,
+            "hospital": 24,
+            "service": 2
+          },
+          "1350": {
+            "transit": 9,
+            "park": 15,
+            "school": 37,
+            "hospital": 46,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 9,
+          "park": 5,
+          "school": 18,
+          "hospital": 38,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 84,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1004.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1004.pdf"
+      }
+    },
+    "1005": {
+      "code": "1005",
+      "name": "บางเขน",
+      "english": "Bang Khen",
+      "area_sqm": 40959096,
+      "region": "north",
+      "zoning": {
+        "label": "residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 49,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 67,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1242,
+          "park": 1569,
+          "school": 681,
+          "hospital": 1737,
+          "service": 1772
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 0,
+            "school": 2,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 16,
+          "park": 10,
+          "school": 22,
+          "hospital": 15,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1005.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1005.pdf"
+      }
+    },
+    "1006": {
+      "code": "1006",
+      "name": "บางกะปิ",
+      "english": "Bang Kapi",
+      "area_sqm": 27587404,
+      "region": "east",
+      "zoning": {
+        "label": "mixed residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 61,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 96,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 371,
+          "park": 1192,
+          "school": 827,
+          "hospital": 111,
+          "service": 1268
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 1,
+            "hospital": 2,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 2,
+            "school": 1,
+            "hospital": 4,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 7,
+          "park": 12,
+          "school": 30,
+          "hospital": 6,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 66,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1006.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1006.pdf"
+      }
+    },
+    "1007": {
+      "code": "1007",
+      "name": "ปทุมวัน",
+      "english": "Parthum Wan",
+      "area_sqm": 8032768,
+      "region": "core",
+      "zoning": {
+        "label": "commercial core",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 44,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 616,
+          "park": 369,
+          "school": 77,
+          "hospital": 399,
+          "service": 1283
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 3,
+            "school": 12,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 3,
+            "park": 8,
+            "school": 27,
+            "hospital": 7,
+            "service": 0
+          },
+          "1350": {
+            "transit": 9,
+            "park": 16,
+            "school": 37,
+            "hospital": 35,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 9,
+          "park": 16,
+          "school": 44,
+          "hospital": 23,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 88,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1007.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1007.pdf"
+      }
+    },
+    "1008": {
+      "code": "1008",
+      "name": "ป้อมปราบศัตรูพ่าย",
+      "english": "Pom Prap Sattru Phai",
+      "area_sqm": 2504113,
+      "region": "core",
+      "zoning": {
+        "label": "mixed heritage",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 54,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 688,
+          "park": 120,
+          "school": 378,
+          "hospital": 76,
+          "service": 900
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 2,
+            "school": 2,
+            "hospital": 2,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 5,
+            "school": 8,
+            "hospital": 6,
+            "service": 0
+          },
+          "1350": {
+            "transit": 7,
+            "park": 10,
+            "school": 25,
+            "hospital": 15,
+            "service": 3
+          }
+        },
+        "poi_in_district": {
+          "transit": 1,
+          "park": 5,
+          "school": 10,
+          "hospital": 7,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 80,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1008.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1008.pdf"
+      }
+    },
+    "1009": {
+      "code": "1009",
+      "name": "พระโขนง",
+      "english": "Phra Khanong",
+      "area_sqm": 13578695,
+      "region": "east",
+      "zoning": {
+        "label": "transit mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 68,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 74,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 927,
+          "park": 1197,
+          "school": 1185,
+          "hospital": 1021,
+          "service": 1877
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 1,
+            "school": 1,
+            "hospital": 1,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 2,
+          "park": 1,
+          "school": 5,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 82,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1009.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1009.pdf"
+      }
+    },
+    "1010": {
+      "code": "1010",
+      "name": "มีนบุรี",
+      "english": "Min Buri",
+      "area_sqm": 61120416,
+      "region": "east",
+      "zoning": {
+        "label": "suburban mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 70,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 46,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1899,
+          "park": 1893,
+          "school": 1393,
+          "hospital": 3545,
+          "service": 2693
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 14,
+          "park": 3,
+          "school": 9,
+          "hospital": 3,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 52,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1010.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1010.pdf"
+      }
+    },
+    "1011": {
+      "code": "1011",
+      "name": "ลาดกระบัง",
+      "english": "Lat Krabang",
+      "area_sqm": 128628048,
+      "region": "east",
+      "zoning": {
+        "label": "logistics industrial",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 82,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 40,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2733,
+          "park": 2770,
+          "school": 2271,
+          "hospital": 2112,
+          "service": 3182
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 6,
+          "park": 11,
+          "school": 20,
+          "hospital": 3,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 60,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1011.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1011.pdf"
+      }
+    },
+    "1012": {
+      "code": "1012",
+      "name": "ยานนาวา",
+      "english": "Yan na wa",
+      "area_sqm": 12504782,
+      "region": "core",
+      "zoning": {
+        "label": "river mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 66,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 399,
+          "park": 288,
+          "school": 570,
+          "hospital": 439,
+          "service": 407
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 2,
+            "park": 1,
+            "school": 0,
+            "hospital": 1,
+            "service": 1
+          },
+          "900": {
+            "transit": 4,
+            "park": 8,
+            "school": 7,
+            "hospital": 3,
+            "service": 1
+          },
+          "1350": {
+            "transit": 4,
+            "park": 8,
+            "school": 11,
+            "hospital": 7,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 8,
+          "park": 10,
+          "school": 24,
+          "hospital": 10,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 73,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1012.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1012.pdf"
+      }
+    },
+    "1013": {
+      "code": "1013",
+      "name": "สัมพันธวงศ์",
+      "english": "Samphanthawong",
+      "area_sqm": 1392972.75,
+      "region": "core",
+      "zoning": {
+        "label": "commercial heritage",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 62,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 468,
+          "park": 59,
+          "school": 38,
+          "hospital": 316,
+          "service": 820
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 4,
+            "school": 3,
+            "hospital": 5,
+            "service": 0
+          },
+          "900": {
+            "transit": 5,
+            "park": 11,
+            "school": 13,
+            "hospital": 9,
+            "service": 3
+          },
+          "1350": {
+            "transit": 9,
+            "park": 16,
+            "school": 22,
+            "hospital": 15,
+            "service": 3
+          }
+        },
+        "poi_in_district": {
+          "transit": 1,
+          "park": 6,
+          "school": 9,
+          "hospital": 7,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 82,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1013.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1013.pdf"
+      }
+    },
+    "1014": {
+      "code": "1014",
+      "name": "พญาไท",
+      "english": "Phaya Thai",
+      "area_sqm": 9214668,
+      "region": "core",
+      "zoning": {
+        "label": "transit mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 48,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 176,
+          "park": 539,
+          "school": 396,
+          "hospital": 128,
+          "service": 145
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 0,
+            "school": 1,
+            "hospital": 5,
+            "service": 2
+          },
+          "900": {
+            "transit": 2,
+            "park": 2,
+            "school": 5,
+            "hospital": 8,
+            "service": 2
+          },
+          "1350": {
+            "transit": 4,
+            "park": 3,
+            "school": 13,
+            "hospital": 19,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 6,
+          "park": 7,
+          "school": 14,
+          "hospital": 21,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 84,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1014.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1014.pdf"
+      }
+    },
+    "1015": {
+      "code": "1015",
+      "name": "ธนบุรี",
+      "english": "Thon buri",
+      "area_sqm": 8461864,
+      "region": "west",
+      "zoning": {
+        "label": "river residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 63,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 195,
+          "park": 682,
+          "school": 294,
+          "hospital": 722,
+          "service": 758
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 3,
+            "park": 1,
+            "school": 5,
+            "hospital": 3,
+            "service": 1
+          },
+          "1350": {
+            "transit": 8,
+            "park": 2,
+            "school": 10,
+            "hospital": 3,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 9,
+          "park": 4,
+          "school": 23,
+          "hospital": 3,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 68,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1015.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1015.pdf"
+      }
+    },
+    "1016": {
+      "code": "1016",
+      "name": "บางกอกใหญ่",
+      "english": "Bangkok Yai",
+      "area_sqm": 6298272,
+      "region": "west",
+      "zoning": {
+        "label": "river heritage",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 61,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 98,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 648,
+          "park": 412,
+          "school": 443,
+          "hospital": 653,
+          "service": 1277
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 1,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 2,
+            "park": 2,
+            "school": 5,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 4,
+            "park": 4,
+            "school": 13,
+            "hospital": 2,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 6,
+          "park": 5,
+          "school": 11,
+          "hospital": 2,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 62,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1016.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1016.pdf"
+      }
+    },
+    "1017": {
+      "code": "1017",
+      "name": "ห้วยขวาง",
+      "english": "Huai Khwang",
+      "area_sqm": 16319268,
+      "region": "core",
+      "zoning": {
+        "label": "mixed residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 56,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 76,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1669,
+          "park": 987,
+          "school": 228,
+          "hospital": 1276,
+          "service": 1117
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 2,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 4,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 6,
+            "school": 8,
+            "hospital": 1,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 8,
+          "park": 18,
+          "school": 12,
+          "hospital": 10,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 76,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1017.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1017.pdf"
+      }
+    },
+    "1018": {
+      "code": "1018",
+      "name": "คลองสาน",
+      "english": "Khlong San",
+      "area_sqm": 5965976,
+      "region": "west",
+      "zoning": {
+        "label": "river mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 59,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 99,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 339,
+          "park": 888,
+          "school": 87,
+          "hospital": 883,
+          "service": 980
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 2,
+            "park": 0,
+            "school": 2,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 3,
+            "park": 1,
+            "school": 2,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 8,
+            "park": 4,
+            "school": 6,
+            "hospital": 4,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 7,
+          "park": 6,
+          "school": 9,
+          "hospital": 4,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 74,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1018.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1018.pdf"
+      }
+    },
+    "1019": {
+      "code": "1019",
+      "name": "ตลิ่งชัน",
+      "english": "Taling Chan",
+      "area_sqm": 35767720,
+      "region": "west",
+      "zoning": {
+        "label": "low-rise residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 64,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 75,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1537,
+          "park": 144,
+          "school": 157,
+          "hospital": 1509,
+          "service": 1650
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 1,
+            "school": 6,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 1,
+            "school": 6,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 6,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 13,
+          "school": 23,
+          "hospital": 1,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 48,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1019.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1019.pdf"
+      }
+    },
+    "1020": {
+      "code": "1020",
+      "name": "บางกอกน้อย",
+      "english": "Bangkok Noi",
+      "area_sqm": 12323945,
+      "region": "west",
+      "zoning": {
+        "label": "river mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 60,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 86,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 369,
+          "park": 968,
+          "school": 483,
+          "hospital": 1436,
+          "service": 585
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 2,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 3,
+            "park": 0,
+            "school": 3,
+            "hospital": 0,
+            "service": 3
+          },
+          "1350": {
+            "transit": 5,
+            "park": 5,
+            "school": 7,
+            "hospital": 0,
+            "service": 4
+          }
+        },
+        "poi_in_district": {
+          "transit": 8,
+          "park": 10,
+          "school": 18,
+          "hospital": 6,
+          "service": 4
+        }
+      },
+      "pressure": {
+        "score": 64,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1020.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1020.pdf"
+      }
+    },
+    "1021": {
+      "code": "1021",
+      "name": "บางขุนเทียน",
+      "english": "Bang Khun thain",
+      "area_sqm": 122207808,
+      "region": "west",
+      "zoning": {
+        "label": "coastal ecological",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 91,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 36,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 6164,
+          "park": 2466,
+          "school": 1616,
+          "hospital": 2530,
+          "service": 3244
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 11,
+          "park": 15,
+          "school": 24,
+          "hospital": 9,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 55,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1021.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1021.pdf"
+      }
+    },
+    "1022": {
+      "code": "1022",
+      "name": "ภาษีเจริญ",
+      "english": "Phasi Charoen",
+      "area_sqm": 19182494,
+      "region": "west",
+      "zoning": {
+        "label": "residential mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 57,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 92,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 842,
+          "park": 580,
+          "school": 43,
+          "hospital": 1096,
+          "service": 815
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 1,
+            "school": 6,
+            "hospital": 0,
+            "service": 1
+          },
+          "1350": {
+            "transit": 2,
+            "park": 3,
+            "school": 9,
+            "hospital": 1,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 7,
+          "park": 8,
+          "school": 28,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 60,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1022.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1022.pdf"
+      }
+    },
+    "1023": {
+      "code": "1023",
+      "name": "หนองแขม",
+      "english": "Nong Khaem",
+      "area_sqm": 36201384,
+      "region": "west",
+      "zoning": {
+        "label": "suburban residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 62,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 54,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 6251,
+          "park": 1446,
+          "school": 1073,
+          "hospital": 1292,
+          "service": 1349
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 4,
+            "hospital": 2,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 2,
+          "school": 21,
+          "hospital": 9,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 49,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1023.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1023.pdf"
+      }
+    },
+    "1024": {
+      "code": "1024",
+      "name": "ราษฏร์บูรณะ",
+      "english": "Rat Burana",
+      "area_sqm": 12333130,
+      "region": "west",
+      "zoning": {
+        "label": "industrial river",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 72,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 73,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2275,
+          "park": 833,
+          "school": 1161,
+          "hospital": 731,
+          "service": 1476
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 2,
+            "school": 0,
+            "hospital": 3,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 2,
+            "hospital": 4,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 6,
+          "school": 7,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 63,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1024.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1024.pdf"
+      }
+    },
+    "1025": {
+      "code": "1025",
+      "name": "บางพลัด",
+      "english": "Bang Phlat",
+      "area_sqm": 11804564,
+      "region": "west",
+      "zoning": {
+        "label": "river residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 79,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 715,
+          "park": 1333,
+          "school": 523,
+          "hospital": 1645,
+          "service": 1234
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 5,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 1,
+            "school": 10,
+            "hospital": 0,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 4,
+          "school": 20,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 65,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1025.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1025.pdf"
+      }
+    },
+    "1026": {
+      "code": "1026",
+      "name": "ดินแดง",
+      "english": "Din Daeng",
+      "area_sqm": 8465891,
+      "region": "core",
+      "zoning": {
+        "label": "high-density residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 52,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 89,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1345,
+          "park": 699,
+          "school": 470,
+          "hospital": 345,
+          "service": 930
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 2,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 2,
+            "school": 7,
+            "hospital": 4,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 6,
+            "school": 18,
+            "hospital": 7,
+            "service": 3
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 9,
+          "school": 25,
+          "hospital": 12,
+          "service": 5
+        }
+      },
+      "pressure": {
+        "score": 80,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1026.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1026.pdf"
+      }
+    },
+    "1027": {
+      "code": "1027",
+      "name": "บึงกุ่ม",
+      "english": "Bueng Kum",
+      "area_sqm": 23404956,
+      "region": "east",
+      "zoning": {
+        "label": "residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 63,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 62,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 3221,
+          "park": 1145,
+          "school": 720,
+          "hospital": 1026,
+          "service": 3316
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 5,
+            "hospital": 2,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 10,
+          "school": 18,
+          "hospital": 6,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1027.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1027.pdf"
+      }
+    },
+    "1028": {
+      "code": "1028",
+      "name": "สาทร",
+      "english": "Sathon",
+      "area_sqm": 7259143,
+      "region": "core",
+      "zoning": {
+        "label": "commercial core",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 50,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 99,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 230,
+          "park": 875,
+          "school": 261,
+          "hospital": 899,
+          "service": 910
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 0,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 2,
+            "park": 2,
+            "school": 10,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 6,
+            "park": 5,
+            "school": 21,
+            "hospital": 9,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 5,
+          "park": 6,
+          "school": 30,
+          "hospital": 6,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 84,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1028.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1028.pdf"
+      }
+    },
+    "1029": {
+      "code": "1029",
+      "name": "บางซื่อ",
+      "english": "Bang Sue",
+      "area_sqm": 12885789,
+      "region": "north",
+      "zoning": {
+        "label": "rail interchange",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 55,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 85,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 625,
+          "park": 1303,
+          "school": 943,
+          "hospital": 447,
+          "service": 1829
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 4,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 4,
+            "park": 1,
+            "school": 8,
+            "hospital": 1,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 8,
+          "park": 7,
+          "school": 17,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 78,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1029.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1029.pdf"
+      }
+    },
+    "1030": {
+      "code": "1030",
+      "name": "จตุจักร",
+      "english": "Chatu Chak",
+      "area_sqm": 32656716,
+      "region": "north",
+      "zoning": {
+        "label": "transit park",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 48,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 321,
+          "park": 203,
+          "school": 536,
+          "hospital": 11,
+          "service": 821
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 2,
+            "park": 3,
+            "school": 0,
+            "hospital": 6,
+            "service": 0
+          },
+          "900": {
+            "transit": 2,
+            "park": 4,
+            "school": 3,
+            "hospital": 7,
+            "service": 1
+          },
+          "1350": {
+            "transit": 4,
+            "park": 9,
+            "school": 9,
+            "hospital": 9,
+            "service": 2
+          }
+        },
+        "poi_in_district": {
+          "transit": 27,
+          "park": 62,
+          "school": 45,
+          "hospital": 17,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 84,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1030.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1030.pdf"
+      }
+    },
+    "1031": {
+      "code": "1031",
+      "name": "บางคอแหลม",
+      "english": "Bang Kho laen",
+      "area_sqm": 8312167,
+      "region": "core",
+      "zoning": {
+        "label": "river mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 65,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 77,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1181,
+          "park": 812,
+          "school": 1016,
+          "hospital": 1008,
+          "service": 1396
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 1,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 2,
+            "school": 9,
+            "hospital": 2,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 3,
+          "park": 3,
+          "school": 10,
+          "hospital": 5,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 70,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1031.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1031.pdf"
+      }
+    },
+    "1032": {
+      "code": "1032",
+      "name": "ประเวศ",
+      "english": "Pra Wet",
+      "area_sqm": 53728764,
+      "region": "east",
+      "zoning": {
+        "label": "suburban mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 66,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 71,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2244,
+          "park": 531,
+          "school": 880,
+          "hospital": 1229,
+          "service": 3410
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 2,
+            "school": 2,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 4,
+            "hospital": 1,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 9,
+          "park": 15,
+          "school": 18,
+          "hospital": 3,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 57,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1032.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1032.pdf"
+      }
+    },
+    "1033": {
+      "code": "1033",
+      "name": "คลองเตย",
+      "english": "Khlong Toei",
+      "area_sqm": 13240401,
+      "region": "core",
+      "zoning": {
+        "label": "port mixed-use",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 74,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 94,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 664,
+          "park": 638,
+          "school": 201,
+          "hospital": 452,
+          "service": 1035
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 2,
+            "school": 10,
+            "hospital": 9,
+            "service": 0
+          },
+          "1350": {
+            "transit": 6,
+            "park": 7,
+            "school": 26,
+            "hospital": 15,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 11,
+          "park": 13,
+          "school": 28,
+          "hospital": 20,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 86,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1033.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1033.pdf"
+      }
+    },
+    "1034": {
+      "code": "1034",
+      "name": "สวนหลวง",
+      "english": "Suanluang",
+      "area_sqm": 24113560,
+      "region": "east",
+      "zoning": {
+        "label": "residential mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 59,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 60,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1510,
+          "park": 1088,
+          "school": 1019,
+          "hospital": 2122,
+          "service": 2591
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 6,
+          "park": 4,
+          "school": 15,
+          "hospital": 2,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 63,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1034.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1034.pdf"
+      }
+    },
+    "1035": {
+      "code": "1035",
+      "name": "จอมทอง",
+      "english": "Chom Thong",
+      "area_sqm": 23167158,
+      "region": "west",
+      "zoning": {
+        "label": "residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 61,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 70,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 675,
+          "park": 1994,
+          "school": 765,
+          "hospital": 1455,
+          "service": 2617
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 0,
+            "school": 4,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 7,
+          "school": 10,
+          "hospital": 4,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 56,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1035.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1035.pdf"
+      }
+    },
+    "1036": {
+      "code": "1036",
+      "name": "ดอนเมือง",
+      "english": "Don Mueang",
+      "area_sqm": 36691444,
+      "region": "north",
+      "zoning": {
+        "label": "airport urban edge",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 57,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 74,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 762,
+          "park": 1770,
+          "school": 423,
+          "hospital": 2671,
+          "service": 1150
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 5,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 0,
+            "school": 6,
+            "hospital": 0,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 9,
+          "school": 12,
+          "hospital": 3,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1036.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1036.pdf"
+      }
+    },
+    "1037": {
+      "code": "1037",
+      "name": "ราชเทวี",
+      "english": "Ratchathewi",
+      "area_sqm": 7167652,
+      "region": "core",
+      "zoning": {
+        "label": "transit commercial",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 45,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 447,
+          "park": 425,
+          "school": 37,
+          "hospital": 245,
+          "service": 476
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 1,
+            "school": 2,
+            "hospital": 3,
+            "service": 0
+          },
+          "900": {
+            "transit": 6,
+            "park": 7,
+            "school": 9,
+            "hospital": 15,
+            "service": 1
+          },
+          "1350": {
+            "transit": 10,
+            "park": 11,
+            "school": 21,
+            "hospital": 22,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 13,
+          "park": 12,
+          "school": 25,
+          "hospital": 25,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 86,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1037.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1037.pdf"
+      }
+    },
+    "1038": {
+      "code": "1038",
+      "name": "ลาดพร้าว",
+      "english": "Lat Phrao",
+      "area_sqm": 21266434,
+      "region": "north",
+      "zoning": {
+        "label": "residential mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 56,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 67,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 3635,
+          "park": 457,
+          "school": 814,
+          "hospital": 1178,
+          "service": 2272
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 2,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 2,
+            "hospital": 5,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 4,
+          "school": 11,
+          "hospital": 9,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 64,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1038.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1038.pdf"
+      }
+    },
+    "1039": {
+      "code": "1039",
+      "name": "วัฒนา",
+      "english": "Vadhana",
+      "area_sqm": 12996544,
+      "region": "core",
+      "zoning": {
+        "label": "commercial residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 53,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 87,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 914,
+          "park": 548,
+          "school": 571,
+          "hospital": 381,
+          "service": 1400
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 3,
+            "school": 5,
+            "hospital": 6,
+            "service": 0
+          },
+          "1350": {
+            "transit": 4,
+            "park": 5,
+            "school": 18,
+            "hospital": 20,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 10,
+          "school": 42,
+          "hospital": 42,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 87,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1039.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1039.pdf"
+      }
+    },
+    "1040": {
+      "code": "1040",
+      "name": "บางแค",
+      "english": "Bang Khae",
+      "area_sqm": 47890656,
+      "region": "west",
+      "zoning": {
+        "label": "suburban mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 58,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 71,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 1765,
+          "park": 1326,
+          "school": 728,
+          "hospital": 693,
+          "service": 2742
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 6,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 1,
+            "school": 2,
+            "hospital": 8,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 3,
+          "park": 7,
+          "school": 22,
+          "hospital": 10,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 56,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1040.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1040.pdf"
+      }
+    },
+    "1041": {
+      "code": "1041",
+      "name": "หลักสี่",
+      "english": "Lak Si",
+      "area_sqm": 22669208,
+      "region": "north",
+      "zoning": {
+        "label": "civic residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 51,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 100,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 811,
+          "park": 398,
+          "school": 225,
+          "hospital": 348,
+          "service": 906
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 1,
+            "school": 1,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 2,
+            "park": 1,
+            "school": 3,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 5,
+            "park": 3,
+            "school": 5,
+            "hospital": 1,
+            "service": 3
+          }
+        },
+        "poi_in_district": {
+          "transit": 10,
+          "park": 14,
+          "school": 14,
+          "hospital": 5,
+          "service": 3
+        }
+      },
+      "pressure": {
+        "score": 61,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1041.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1041.pdf"
+      }
+    },
+    "1042": {
+      "code": "1042",
+      "name": "สายไหม",
+      "english": "Sai Mai",
+      "area_sqm": 43612880,
+      "region": "north",
+      "zoning": {
+        "label": "suburban residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 54,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 83,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 730,
+          "park": 1871,
+          "school": 1007,
+          "hospital": 409,
+          "service": 911
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          },
+          "1350": {
+            "transit": 1,
+            "park": 0,
+            "school": 1,
+            "hospital": 1,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 8,
+          "school": 15,
+          "hospital": 8,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 49,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1042.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1042.pdf"
+      }
+    },
+    "1043": {
+      "code": "1043",
+      "name": "คันนายาว",
+      "english": "Khan Na Yao",
+      "area_sqm": 25380514,
+      "region": "east",
+      "zoning": {
+        "label": "residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 60,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 80,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 314,
+          "park": 531,
+          "school": 1924,
+          "hospital": 1075,
+          "service": 2608
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 1,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 1,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 2,
+            "school": 0,
+            "hospital": 1,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 11,
+          "park": 10,
+          "school": 5,
+          "hospital": 8,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 55,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1043.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1043.pdf"
+      }
+    },
+    "1044": {
+      "code": "1044",
+      "name": "สะพานสูง",
+      "english": "Saphan Sung",
+      "area_sqm": 28068656,
+      "region": "east",
+      "zoning": {
+        "label": "residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 64,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 64,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2108,
+          "park": 759,
+          "school": 1366,
+          "hospital": 2225,
+          "service": 614
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 1,
+            "school": 0,
+            "hospital": 0,
+            "service": 1
+          },
+          "1350": {
+            "transit": 0,
+            "park": 2,
+            "school": 0,
+            "hospital": 0,
+            "service": 1
+          }
+        },
+        "poi_in_district": {
+          "transit": 10,
+          "park": 4,
+          "school": 9,
+          "hospital": 1,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 53,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1044.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1044.pdf"
+      }
+    },
+    "1045": {
+      "code": "1045",
+      "name": "วังทองหลาง",
+      "english": "Wang Thong Lang",
+      "area_sqm": 17075578,
+      "region": "east",
+      "zoning": {
+        "label": "residential mixed",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 57,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 83,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 742,
+          "park": 912,
+          "school": 666,
+          "hospital": 788,
+          "service": 2769
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 1,
+            "park": 0,
+            "school": 1,
+            "hospital": 3,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 2,
+            "school": 5,
+            "hospital": 5,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 5,
+          "school": 10,
+          "hospital": 7,
+          "service": 0
+        }
+      },
+      "pressure": {
+        "score": 64,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1045.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1045.pdf"
+      }
+    },
+    "1046": {
+      "code": "1046",
+      "name": "คลองสามวา",
+      "english": "Khlong Sam Wa",
+      "area_sqm": 120176920,
+      "region": "east",
+      "zoning": {
+        "label": "canal suburban",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 75,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 38,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 5320,
+          "park": 1694,
+          "school": 911,
+          "hospital": 5702,
+          "service": 3522
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 32,
+          "school": 16,
+          "hospital": 1,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 50,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1046.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1046.pdf"
+      }
+    },
+    "1047": {
+      "code": "1047",
+      "name": "บางนา",
+      "english": "Bang Na",
+      "area_sqm": 18947526,
+      "region": "east",
+      "zoning": {
+        "label": "transit industrial edge",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 76,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 87,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 323,
+          "park": 204,
+          "school": 631,
+          "hospital": 1510,
+          "service": 2586
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 2,
+            "park": 1,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 2,
+            "park": 1,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 2,
+            "park": 3,
+            "school": 4,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 8,
+          "park": 6,
+          "school": 13,
+          "hospital": 6,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 82,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1047.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1047.pdf"
+      }
+    },
+    "1048": {
+      "code": "1048",
+      "name": "ทวีวัฒนา",
+      "english": "Thawi Watthana",
+      "area_sqm": 51732144,
+      "region": "west",
+      "zoning": {
+        "label": "green suburban",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 55,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 60,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 3853,
+          "park": 1042,
+          "school": 1212,
+          "hospital": 1303,
+          "service": 1358
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 1,
+            "school": 2,
+            "hospital": 1,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 4,
+          "park": 10,
+          "school": 13,
+          "hospital": 3,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 48,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1048.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1048.pdf"
+      }
+    },
+    "1049": {
+      "code": "1049",
+      "name": "ทุ่งครุ",
+      "english": "Thung khru",
+      "area_sqm": 32950616,
+      "region": "west",
+      "zoning": {
+        "label": "residential industrial",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 66,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 68,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2295,
+          "park": 398,
+          "school": 684,
+          "hospital": 2726,
+          "service": 2494
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 2,
+            "school": 0,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 6,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 7,
+            "school": 3,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 1,
+          "park": 35,
+          "school": 11,
+          "hospital": 2,
+          "service": 1
+        }
+      },
+      "pressure": {
+        "score": 52,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1049.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1049.pdf"
+      }
+    },
+    "1050": {
+      "code": "1050",
+      "name": "บางบอน",
+      "english": "Bang Bon",
+      "area_sqm": 35857236,
+      "region": "west",
+      "zoning": {
+        "label": "industrial residential",
+        "source": "prototype_scenario",
+        "note": "Scenario label retained until official BMA zoning polygons are digitized or connected."
+      },
+      "flood": {
+        "score": 67,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until BMA flood/raster data is converted into district metrics."
+      },
+      "accessibility": {
+        "score": 58,
+        "source": "OpenStreetMap",
+        "methodology": "walking_distance_proxy",
+        "note": "Proxy score based on straight-line distance to OSM POI and POI counts in district; not a network isochrone.",
+        "nearest_meters": {
+          "transit": 2541,
+          "park": 1372,
+          "school": 385,
+          "hospital": 2002,
+          "service": 2084
+        },
+        "counts_within_meters": {
+          "450": {
+            "transit": 0,
+            "park": 0,
+            "school": 1,
+            "hospital": 0,
+            "service": 0
+          },
+          "900": {
+            "transit": 0,
+            "park": 0,
+            "school": 4,
+            "hospital": 0,
+            "service": 0
+          },
+          "1350": {
+            "transit": 0,
+            "park": 0,
+            "school": 4,
+            "hospital": 0,
+            "service": 0
+          }
+        },
+        "poi_in_district": {
+          "transit": 0,
+          "park": 1,
+          "school": 12,
+          "hospital": 3,
+          "service": 2
+        }
+      },
+      "pressure": {
+        "score": 51,
+        "source": "prototype_scenario",
+        "note": "Scenario score retained until permit, land value, or building change data is connected."
+      },
+      "links": {
+        "png": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1050.png",
+        "pdf": "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08/1050.pdf"
+      }
+    }
+  }
+}

@@ -10,13 +10,17 @@
     "build": "vinext build",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "data:refresh": "node scripts/refresh-data.mjs",
+    "data:validate": "node scripts/validate-data.mjs",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
+    "@turf/turf": "^7.3.5",
     "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",

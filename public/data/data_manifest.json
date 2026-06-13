@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-13T15:33:40.631Z",
+  "sources": [
+    {
+      "id": "osm",
+      "label": "OpenStreetMap via Overpass API",
+      "url": "https://overpass-api.de/api/interpreter",
+      "license": "Open Database License (ODbL)"
+    },
+    {
+      "id": "bangkok_district_boundary",
+      "label": "Bangkok district TopoJSON from prasertcbs/thailand_gis",
+      "url": "https://github.com/prasertcbs/thailand_gis/tree/main/bangkok/district"
+    },
+    {
+      "id": "bma_map_download",
+      "label": "BMA GIS map download links for district PNG/PDF assets",
+      "url": "https://cityplangis.bangkok.go.th/cpdPortal/index.php/map-download/"
+    }
+  ],
+  "record_counts": {
+    "districts": 50,
+    "poi_total": 2236,
+    "poi_by_category": {
+      "transit": 308,
+      "park": 506,
+      "school": 921,
+      "hospital": 421,
+      "service": 80
+    }
+  },
+  "bbox": {
+    "south": 13.49,
+    "west": 100.32,
+    "north": 13.96,
+    "east": 100.95
+  },
+  "notes": [
+    "The website renders this static snapshot and does not call Overpass from the browser.",
+    "Accessibility is a walking-distance proxy, not a routed network isochrone.",
+    "Flood, zoning, and development pressure are still prototype scenario layers."
+  ]
+}

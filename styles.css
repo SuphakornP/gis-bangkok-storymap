@@ -270,6 +270,11 @@ section + section {
   font-weight: 850;
 }
 
+.data-freshness {
+  border-left: 3px solid var(--green);
+  padding-left: 10px;
+}
+
 .map-stage {
   min-width: 0;
   position: relative;
@@ -536,6 +541,10 @@ section + section {
 
 .poi-hospital {
   background: var(--red);
+}
+
+.poi-school {
+  background: var(--amber);
 }
 
 .poi-service {
