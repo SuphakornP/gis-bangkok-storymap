@@ -9788,7 +9788,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.5980795,
+          100.5980838,
           13.8765196
         ]
       },
@@ -47401,6 +47401,31 @@
     },
     {
       "type": "Feature",
+      "id": "hospital:osm-way-1529333348",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.6064222,
+          13.8893057
+        ]
+      },
+      "properties": {
+        "id": "hospital:osm-way-1529333348",
+        "name": "Central General Hospital",
+        "category": "hospital",
+        "source": "OpenStreetMap",
+        "source_url": "https://www.openstreetmap.org/way/1529333348",
+        "osm_type": "way",
+        "osm_id": 1529333348,
+        "district_code": "1005",
+        "district_name": "บางเขน",
+        "tags": {
+          "amenity": "hospital"
+        }
+      }
+    },
+    {
+      "type": "Feature",
       "id": "hospital:osm-node-2338878109",
       "geometry": {
         "type": "Point",
@@ -56726,5 +56751,5 @@
       }
     }
   ],
-  "generated_at": "2026-06-13T15:33:40.631Z"
+  "generated_at": "2026-06-14T15:06:47.801Z"
 }

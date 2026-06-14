@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-06-13T15:33:40.631Z",
+  "generated_at": "2026-06-14T15:06:47.801Z",
   "methodology": {
     "accessibility": "Weighted straight-line distance proxy from district centroid to OSM transit, park, school, hospital, and service POIs, with a small bonus for POI counts inside the district.",
     "flood": "Prototype scenario values only.",
@@ -339,7 +339,7 @@
           "transit": 16,
           "park": 10,
           "school": 22,
-          "hospital": 15,
+          "hospital": 16,
           "service": 2
         }
       },

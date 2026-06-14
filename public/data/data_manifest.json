@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-06-13T15:33:40.631Z",
+  "generated_at": "2026-06-14T15:06:47.801Z",
   "sources": [
     {
       "id": "osm",
@@ -21,12 +21,12 @@
   ],
   "record_counts": {
     "districts": 50,
-    "poi_total": 2236,
+    "poi_total": 2237,
     "poi_by_category": {
       "transit": 308,
       "park": 506,
       "school": 921,
-      "hospital": 421,
+      "hospital": 422,
       "service": 80
     }
   },
