@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bangkok GIS ความเสี่ยง + การเข้าถึง Prototype</title>
+    <title>ต้นแบบ Bangkok GIS: Risk + Access</title>
     <meta
       name="description"
-      content="Prototype แผนที่ GIS กรุงเทพฯ สำหรับขอบเขตเขต, flood x zoning scenario, accessibility rings และ story map."
+      content="Prototype แผนที่ Bangkok GIS สำหรับ district boundaries, flood x zoning scenario, accessibility rings และ story map."
     />
     <link
       rel="stylesheet"
@@ -60,20 +60,22 @@
             </div>
           </div>
           <h1>
-            <span data-i18n="brand.titleFlood">น้ำท่วม</span>
-            <span data-i18n="brand.titleZoning">ผังเมือง</span>
-            <span data-i18n="brand.titleAccess">การเข้าถึง</span>
+            <span data-i18n="brand.titleFlood">Flood</span>
+            <span data-i18n="brand.titleZoning">Zoning</span>
+            <span data-i18n="brand.titleAccess">Access</span>
           </h1>
           <p class="lead">
-            <span data-i18n="brand.leadBoundary">Boundary กทม. จาก prasertcbs/thailand_gis</span><br />
+            <span data-i18n="brand.leadBoundary"
+              >Bangkok district boundaries จาก prasertcbs/thailand_gis</span
+            ><br />
             <span data-i18n="brand.leadSnapshot"
-              >ใช้ static data snapshot เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง</span
+              >ใช้ static snapshot เพื่อซ้อน layer และสร้าง story map ของเมือง</span
             >
           </p>
         </header>
 
         <section aria-labelledby="mode-heading">
-          <h2 id="mode-heading" data-i18n="sections.mode">โจทย์ที่แสดงบนแผนที่</h2>
+          <h2 id="mode-heading" data-i18n="sections.mode">เลือกมุมมองแผนที่</h2>
           <div class="mode-stack" id="modeStack"></div>
         </section>
 
@@ -98,13 +100,13 @@
           <h2 id="data-heading" data-i18n="sections.data">ข้อมูลในต้นแบบ</h2>
           <p>
             <span data-i18n="dataNote.boundaries"
-              >ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. POI และตัวแทนการเข้าถึง</span
+              >District boundaries มาจาก TopoJSON จริง ส่วน POI และ accessibility proxy</span
             >
             <span data-i18n="dataNote.snapshot"
-              >มาจาก OpenStreetMap snapshot. น้ำท่วม, ผังเมือง และแรงกดดันการพัฒนา</span
+              >มาจาก OpenStreetMap snapshot ส่วน flood exposure, zoning และ development pressure</span
             >
             <span data-i18n="dataNote.scenario"
-              >ยังเป็นชั้นข้อมูลจำลองสำหรับออกแบบเวิร์กโฟลว์.</span
+              >ยังเป็น scenario layer สำหรับออกแบบ workflow.</span
             >
           </p>
           <p class="data-freshness" id="dataFreshness">กำลังโหลด metadata...</p>
@@ -113,7 +115,7 @@
             target="_blank"
             rel="noreferrer"
             data-i18n="dataNote.sourceLink"
-            >แหล่งข้อมูลขอบเขตเขตกรุงเทพฯ</a
+            >แหล่งข้อมูล district boundaries กรุงเทพฯ</a
           >
         </section>
       </aside>
@@ -123,16 +125,16 @@
         <div class="map-topbar">
           <div>
             <p class="eyebrow" data-i18n="topbar.activeView">มุมมองปัจจุบัน</p>
-            <strong id="activeTitle">น้ำท่วม x ผังเมือง</strong>
+            <strong id="activeTitle">Flood x Zoning</strong>
           </div>
-          <div class="layer-toggles" aria-label="สวิตช์เปิดปิดชั้นข้อมูล" data-i18n-aria-label="aria.layerToggles">
+          <div class="layer-toggles" aria-label="Layer toggles" data-i18n-aria-label="aria.layerToggles">
             <label>
               <input id="toggleFlood" type="checkbox" checked />
-              <span data-i18n="layers.flood">น้ำท่วม</span>
+              <span data-i18n="layers.flood">Flood</span>
             </label>
             <label>
               <input id="toggleAccess" type="checkbox" checked />
-              <span data-i18n="layers.access">ตัวแทนการเข้าถึง</span>
+              <span data-i18n="layers.access">Access proxy</span>
             </label>
             <label>
               <input id="togglePoi" type="checkbox" checked />
@@ -149,39 +151,39 @@
           <p class="eyebrow" id="selectedCode">1047</p>
           <h2 id="selectedName">เขตบางนา</h2>
           <p id="selectedSummary">
-            เลือกเขตบนแผนที่เพื่อดูคะแนนน้ำท่วม, ผังเมือง และการเข้าถึง
+            เลือกเขตบนแผนที่เพื่อดู flood, zoning และ accessibility score
           </p>
 
           <div class="metric-stack" id="metricStack"></div>
 
           <div class="download-actions">
             <a id="downloadPng" target="_blank" rel="noreferrer" data-i18n="downloads.png"
-              >แผนที่ PNG</a
+              >PNG map</a
             >
             <a id="downloadPdf" target="_blank" rel="noreferrer" data-i18n="downloads.pdf"
-              >ผังเมือง PDF</a
+              >PDF zoning</a
             >
           </div>
         </section>
 
         <section class="story-panel">
           <div class="section-row">
-            <h2 data-i18n="sections.story">แผนที่เล่าเรื่อง</h2>
-            <span data-i18n="story.sceneCount">3 ฉาก</span>
+            <h2 data-i18n="sections.story">Story map</h2>
+            <span data-i18n="story.sceneCount">3 stories</span>
           </div>
           <div class="story-list" id="storyList"></div>
         </section>
 
         <section class="workflow-panel">
-          <h2 data-i18n="sections.workflow">เวิร์กโฟลว์ GIS ถัดไป</h2>
+          <h2 data-i18n="sections.workflow">Next GIS workflow</h2>
           <ol>
-            <li data-i18n="workflow.refresh">Automation ดึง OSM POI เป็น static snapshot ก่อนแสดงผล</li>
+            <li data-i18n="workflow.refresh">Automate การดึง OSM POI เป็น static snapshot ก่อน render</li>
             <li data-i18n="workflow.flood">
-              แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data
+              แทนที่ scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data
             </li>
-            <li data-i18n="workflow.zoning">ต่อ zoning polygon หรือ digitize จากผังเมือง PDF</li>
+            <li data-i18n="workflow.zoning">เชื่อมต่อ zoning polygon หรือ digitize จาก zoning PDF</li>
             <li data-i18n="workflow.isochrone">
-              คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี
+              คำนวณ isochrone ด้วย network graph แทน radius rings
             </li>
           </ol>
         </section>
