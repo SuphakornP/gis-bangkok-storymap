@@ -1,52 +1,343 @@
 const SOURCE_BASE =
   "https://cityplangis.bangkok.go.th/cpdPortal/wp-content/uploads/2019/08";
 
+const LANGUAGE_STORAGE_KEY = "bangkok-gis-language";
+const SUPPORTED_LANGUAGES = new Set(["th", "en"]);
+
+const translations = {
+  th: {
+    documentTitle: "Bangkok GIS ความเสี่ยง + การเข้าถึง Prototype",
+    documentDescription:
+      "Prototype แผนที่ GIS กรุงเทพฯ สำหรับขอบเขตเขต, flood x zoning scenario, accessibility rings และ story map.",
+    languageToggle: {
+      label: "เลือกภาษา",
+    },
+    aria: {
+      controlPanel: "ตัวควบคุมแผนที่",
+      mapStage: "แผนที่กรุงเทพฯ แบบโต้ตอบ",
+      layerToggles: "สวิตช์เปิดปิดชั้นข้อมูล",
+      inspector: "รายละเอียดเขตที่เลือก",
+    },
+    brand: {
+      eyebrow: "ต้นแบบ Bangkok GIS",
+      titleFlood: "น้ำท่วม",
+      titleZoning: "ผังเมือง",
+      titleAccess: "การเข้าถึง",
+      leadBoundary: "Boundary กทม. จาก prasertcbs/thailand_gis",
+      leadSnapshot: "ใช้ static data snapshot เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง",
+    },
+    sections: {
+      mode: "โจทย์ที่แสดงบนแผนที่",
+      search: "ค้นหาเขต",
+      data: "ข้อมูลในต้นแบบ",
+      story: "แผนที่เล่าเรื่อง",
+      workflow: "เวิร์กโฟลว์ GIS ถัดไป",
+    },
+    search: {
+      label: "ชื่อเขตหรือรหัส",
+      placeholder: "บางนา, 1047, Khlong Toei",
+    },
+    dataNote: {
+      boundaries: "ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. POI และตัวแทนการเข้าถึง",
+      snapshot: "มาจาก OpenStreetMap snapshot. น้ำท่วม, ผังเมือง และแรงกดดันการพัฒนา",
+      scenario: "ยังเป็นชั้นข้อมูลจำลองสำหรับออกแบบเวิร์กโฟลว์.",
+      sourceLink: "แหล่งข้อมูลขอบเขตเขตกรุงเทพฯ",
+    },
+    topbar: {
+      activeView: "มุมมองปัจจุบัน",
+    },
+    layers: {
+      flood: "น้ำท่วม",
+      access: "ตัวแทนการเข้าถึง",
+      poi: "POI",
+    },
+    downloads: {
+      png: "แผนที่ PNG",
+      pdf: "ผังเมือง PDF",
+    },
+    story: {
+      sceneCount: "3 ฉาก",
+    },
+    workflow: {
+      refresh: "Automation ดึง OSM POI เป็น static snapshot ก่อนแสดงผล",
+      flood: "แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data",
+      zoning: "ต่อ zoning polygon หรือ digitize จากผังเมือง PDF",
+      isochrone: "คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี",
+    },
+    modes: {
+      flood: {
+        title: "น้ำท่วม x ผังเมือง",
+        description: "ดูเขตที่มีความเสี่ยงน้ำท่วมสูงและการใช้ประโยชน์ที่ดินเปราะบาง",
+      },
+      access: {
+        title: "ตัวแทนการเข้าถึง",
+        description: "ดูคะแนนการเข้าถึงจาก OSM POI snapshot ด้วยรัศมี 450/900/1350 เมตร",
+      },
+      story: {
+        title: "แผนที่เล่าเรื่องกรุงเทพฯ",
+        description: "เล่าเรื่องคลองเตย-พระโขนง-บางนา, ลาดกระบัง, บางขุนเทียน",
+      },
+    },
+    storyScenes: {
+      "east-corridor": {
+        title: "คลองเตย-พระโขนง-บางนา",
+        description: "แนวเปลี่ยนผ่านจากท่าเรือและ mixed-use ไปสู่ transit/industrial edge",
+      },
+      "lat-krabang": {
+        title: "ลาดกระบัง logistics edge",
+        description: "พื้นที่ใหญ่ ฝั่งตะวันออก เชื่อมสนามบินและ logistics แต่ flood exposure สูง",
+      },
+      "bang-khun-thian": {
+        title: "บางขุนเทียน coastal risk",
+        description: "ขอบเมืองชายฝั่ง เหมาะกับ story น้ำท่วม-การใช้ที่ดิน-ระบบนิเวศ",
+      },
+    },
+    units: {
+      districts: "เขต",
+      metersShort: " ม.",
+      notAvailable: "ไม่มีข้อมูล",
+    },
+    risk: {
+      veryHigh: "สูงมาก",
+      high: "สูง",
+      medium: "กลาง",
+      low: "ต่ำ",
+    },
+    legend: {
+      accessTitle: "คะแนนตัวแทนการเข้าถึง",
+      storyTitle: "พื้นที่เล่าเรื่อง",
+      floodTitle: "Scenario ความเสี่ยงน้ำท่วม",
+      accessRows: {
+        veryHigh: "สูงมาก",
+        high: "สูง",
+        medium: "กลาง",
+        low: "ต่ำ",
+        rings: "รัศมี 450/900/1350m",
+      },
+      storyRows: {
+        focus: "เขตในเรื่องเล่า",
+        other: "เขตอื่น",
+        rings: "POI / วงบริการ",
+      },
+      floodRows: {
+        veryHigh: "เสี่ยงสูงมาก",
+        high: "เสี่ยงสูง",
+        medium: "กลาง",
+        low: "ต่ำ",
+      },
+    },
+    poi: {
+      transit: "ขนส่ง",
+      park: "สวน",
+      school: "โรงเรียน",
+      hospital: "โรงพยาบาล",
+      service: "บริการ",
+    },
+    metrics: {
+      flood: "ความเสี่ยงน้ำท่วม (scenario)",
+      access: "ตัวแทนการเข้าถึง (OSM)",
+      pressure: "แรงกดดันการพัฒนา (scenario)",
+    },
+    inspector: {
+      districtPrefix: "เขต",
+      unknownDistrict: "ไม่ทราบเขต",
+      summary:
+        "{english} · {zoning}. น้ำท่วม/ผังเมืองเป็น scenario; การเข้าถึงเป็นตัวแทนระยะเดินจาก OSM ({nearest}).",
+    },
+    freshness: {
+      label: "Snapshot",
+    },
+    errors: {
+      mapTitle: "โหลดแผนที่ไม่สำเร็จ",
+      mapMessage:
+        "ตรวจว่า static data snapshot มีครบ และเชื่อมต่อ CDN สำหรับ Leaflet/TopoJSON ได้",
+      cdnUnavailable: "Leaflet หรือ TopoJSON CDN ไม่พร้อมใช้งาน",
+      cannotLoad: "โหลด {label} ไม่สำเร็จ",
+    },
+  },
+  en: {
+    documentTitle: "Bangkok GIS Risk + Access Prototype",
+    documentDescription:
+      "Interactive Bangkok GIS prototype using district boundaries, flood x zoning scenarios, accessibility rings, and story-map views.",
+    languageToggle: {
+      label: "Choose language",
+    },
+    aria: {
+      controlPanel: "Map controls",
+      mapStage: "Bangkok interactive map",
+      layerToggles: "Layer toggles",
+      inspector: "Selected district details",
+    },
+    brand: {
+      eyebrow: "Bangkok GIS prototype",
+      titleFlood: "Flood",
+      titleZoning: "Zoning",
+      titleAccess: "Access",
+      leadBoundary: "Bangkok district boundaries from prasertcbs/thailand_gis",
+      leadSnapshot: "Static data snapshots layer urban risk, access, and story views",
+    },
+    sections: {
+      mode: "Map view",
+      search: "Search districts",
+      data: "Prototype data",
+      story: "Story map",
+      workflow: "Next GIS workflow",
+    },
+    search: {
+      label: "District name or code",
+      placeholder: "Bang Na, 1047, Khlong Toei",
+    },
+    dataNote: {
+      boundaries: "District boundaries come from real TopoJSON data. POI and accessibility proxy",
+      snapshot: "come from an OpenStreetMap snapshot. Flood, zoning, and development pressure",
+      scenario: "remain scenario layers for workflow design.",
+      sourceLink: "Bangkok district source",
+    },
+    topbar: {
+      activeView: "Active view",
+    },
+    layers: {
+      flood: "Flood",
+      access: "Access proxy",
+      poi: "POI",
+    },
+    downloads: {
+      png: "PNG map",
+      pdf: "PDF zoning",
+    },
+    story: {
+      sceneCount: "3 scenes",
+    },
+    workflow: {
+      refresh: "Automate OSM POI extraction into a static snapshot before rendering",
+      flood: "Replace scenario scores with a BMA flood layer or sensor/complaint data",
+      zoning: "Connect zoning polygons or digitize them from planning PDFs",
+      isochrone: "Calculate real isochrones with a network graph instead of radius rings",
+    },
+    modes: {
+      flood: {
+        title: "Flood x Zoning",
+        description: "See districts with higher flood exposure and vulnerable land-use scenarios.",
+      },
+      access: {
+        title: "Accessibility proxy",
+        description: "View access scores from the OSM POI snapshot using 450/900/1350 m rings.",
+      },
+      story: {
+        title: "Bangkok story map",
+        description: "Explore Khlong Toei-Phra Khanong-Bang Na, Lat Krabang, and Bang Khun Thian.",
+      },
+    },
+    storyScenes: {
+      "east-corridor": {
+        title: "Khlong Toei-Phra Khanong-Bang Na",
+        description:
+          "A transition corridor from port and mixed-use districts toward transit and industrial edges.",
+      },
+      "lat-krabang": {
+        title: "Lat Krabang logistics edge",
+        description:
+          "A large eastern district linked to the airport and logistics network with high flood exposure.",
+      },
+      "bang-khun-thian": {
+        title: "Bang Khun Thian coastal risk",
+        description: "A coastal urban edge for flood, land-use, and ecosystem storytelling.",
+      },
+    },
+    units: {
+      districts: "districts",
+      metersShort: " m",
+      notAvailable: "n/a",
+    },
+    risk: {
+      veryHigh: "Very high",
+      high: "High",
+      medium: "Medium",
+      low: "Low",
+    },
+    legend: {
+      accessTitle: "Accessibility proxy score",
+      storyTitle: "Story focus",
+      floodTitle: "Flood exposure scenario",
+      accessRows: {
+        veryHigh: "Very high",
+        high: "High",
+        medium: "Medium",
+        low: "Low",
+        rings: "450/900/1350 m rings",
+      },
+      storyRows: {
+        focus: "Story district",
+        other: "Other district",
+        rings: "POI / service rings",
+      },
+      floodRows: {
+        veryHigh: "Very high risk",
+        high: "High risk",
+        medium: "Medium",
+        low: "Low",
+      },
+    },
+    poi: {
+      transit: "Transit",
+      park: "Park",
+      school: "School",
+      hospital: "Hospital",
+      service: "Service",
+    },
+    metrics: {
+      flood: "Flood exposure (scenario)",
+      access: "Accessibility proxy (OSM)",
+      pressure: "Development pressure (scenario)",
+    },
+    inspector: {
+      districtPrefix: "",
+      unknownDistrict: "Unknown district",
+      summary:
+        "{english} · {zoning}. Flood/zoning are scenarios; accessibility is an OSM walking-distance proxy ({nearest}).",
+    },
+    freshness: {
+      label: "Snapshot",
+    },
+    errors: {
+      mapTitle: "Map failed to load",
+      mapMessage:
+        "Check that the static data snapshot is complete and the Leaflet/TopoJSON CDN is reachable",
+      cdnUnavailable: "Leaflet or TopoJSON CDN is unavailable",
+      cannotLoad: "Cannot load {label}",
+    },
+  },
+};
+
 const modes = [
-  {
-    id: "flood",
-    title: "Flood x Zoning",
-    description: "ดูเขตที่ flood exposure สูงและใช้ประโยชน์ที่ดินเปราะบาง",
-  },
-  {
-    id: "access",
-    title: "Accessibility proxy",
-    description: "ดู access score จาก OSM POI snapshot ด้วยรัศมี 450/900/1350 เมตร",
-  },
-  {
-    id: "story",
-    title: "Bangkok story map",
-    description: "เล่าเรื่องคลองเตย-พระโขนง-บางนา, ลาดกระบัง, บางขุนเทียน",
-  },
+  { id: "flood" },
+  { id: "access" },
+  { id: "story" },
 ];
 
 const storyScenes = [
   {
     id: "east-corridor",
-    title: "คลองเตย-พระโขนง-บางนา",
     districts: ["1033", "1009", "1047"],
     center: [13.685, 100.607],
     zoom: 12,
-    description: "แนวเปลี่ยนผ่านจากท่าเรือและ mixed-use ไปสู่ transit/industrial edge",
   },
   {
     id: "lat-krabang",
-    title: "ลาดกระบัง logistics edge",
     districts: ["1011"],
     center: [13.724, 100.775],
     zoom: 11,
-    description: "พื้นที่ใหญ่ ฝั่งตะวันออก เชื่อมสนามบินและ logistics แต่ flood exposure สูง",
   },
   {
     id: "bang-khun-thian",
-    title: "บางขุนเทียน coastal risk",
     districts: ["1021"],
     center: [13.58, 100.43],
     zoom: 11,
-    description: "ขอบเมืองชายฝั่ง เหมาะกับ story น้ำท่วม-การใช้ที่ดิน-ระบบนิเวศ",
   },
 ];
 
 const state = {
+  language: getInitialLanguage(),
   mode: "flood",
   query: "",
   selectedCode: "1047",
@@ -80,7 +371,88 @@ const els = {
   toggleFlood: document.querySelector("#toggleFlood"),
   toggleAccess: document.querySelector("#toggleAccess"),
   togglePoi: document.querySelector("#togglePoi"),
+  langTh: document.querySelector("#langTh"),
+  langEn: document.querySelector("#langEn"),
 };
+
+function getInitialLanguage() {
+  try {
+    const stored = window.localStorage?.getItem(LANGUAGE_STORAGE_KEY);
+    return SUPPORTED_LANGUAGES.has(stored) ? stored : "th";
+  } catch {
+    return "th";
+  }
+}
+
+function currentCopy() {
+  return translations[state.language] || translations.th;
+}
+
+function readCopy(path, source = currentCopy()) {
+  return path.split(".").reduce((value, key) => value?.[key], source);
+}
+
+function translate(path) {
+  return readCopy(path) ?? readCopy(path, translations.th) ?? "";
+}
+
+function languageLocale() {
+  return state.language === "th" ? "th-TH" : "en-US";
+}
+
+function formatNumber(value) {
+  return Number(value || 0).toLocaleString(languageLocale());
+}
+
+function modeCopy(mode) {
+  return currentCopy().modes[mode.id];
+}
+
+function storyCopy(scene) {
+  return currentCopy().storyScenes[scene.id];
+}
+
+function updateLanguageToggle() {
+  const isThai = state.language === "th";
+  els.langTh.classList.toggle("is-active", isThai);
+  els.langTh.setAttribute("aria-pressed", String(isThai));
+  els.langEn.classList.toggle("is-active", !isThai);
+  els.langEn.setAttribute("aria-pressed", String(!isThai));
+}
+
+function applyStaticTranslations() {
+  document.documentElement.lang = state.language;
+  document.title = currentCopy().documentTitle;
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute("content", currentCopy().documentDescription);
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    element.textContent = translate(element.dataset.i18n);
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    element.setAttribute("placeholder", translate(element.dataset.i18nPlaceholder));
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    element.setAttribute("aria-label", translate(element.dataset.i18nAriaLabel));
+  });
+
+  updateLanguageToggle();
+}
+
+function setLanguage(language) {
+  if (!SUPPORTED_LANGUAGES.has(language) || language === state.language) return;
+  state.language = language;
+  try {
+    window.localStorage?.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // Language selection still works for the current session if storage is unavailable.
+  }
+  applyStaticTranslations();
+  if (map) render();
+}
 
 function scoreOrDefault(value, fallback = 50) {
   return Number.isFinite(value) ? value : fallback;
@@ -92,7 +464,7 @@ function getProfile(code) {
   if (!district) {
     return {
       code: id,
-      name: "ไม่ทราบเขต",
+      name: currentCopy().inspector.unknownDistrict,
       english: "Unknown",
       region: "unknown",
       zoning: "scenario pending",
@@ -133,9 +505,32 @@ function riskClass(score) {
 }
 
 function riskLabel(score) {
-  if (score >= 70) return "สูง";
-  if (score >= 55) return "กลาง";
-  return "ต่ำ";
+  const labels = currentCopy().risk;
+  if (score >= 70) return labels.high;
+  if (score >= 55) return labels.medium;
+  return labels.low;
+}
+
+function districtDisplayName(profile) {
+  if (state.language === "en") return profile.english || profile.name;
+  if (!profile.raw) return profile.name;
+  return `${currentCopy().inspector.districtPrefix}${profile.name}`;
+}
+
+function districtSecondaryText(profile) {
+  const thaiName = profile.raw
+    ? `${translations.th.inspector.districtPrefix}${profile.name}`
+    : profile.name;
+  const alternateName = state.language === "en" ? thaiName : profile.english;
+  return `${alternateName} · ${profile.zoning}`;
+}
+
+function districtTooltip(profile) {
+  const thaiName = profile.raw
+    ? `${translations.th.inspector.districtPrefix}${profile.name}`
+    : profile.name;
+  if (state.language === "en") return `${profile.english || profile.name}<br>${thaiName}`;
+  return `${thaiName}<br>${profile.english || ""}`;
 }
 
 function modeColor(feature) {
@@ -204,7 +599,9 @@ function setupMap() {
 
 async function fetchJson(url, label) {
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`Cannot load ${label}`);
+  if (!response.ok) {
+    throw new Error(currentCopy().errors.cannotLoad.replace("{label}", label));
+  }
   return response.json();
 }
 
@@ -242,7 +639,7 @@ function renderFeatureLayer() {
         mouseover: () => layer.setStyle({ weight: 3, color: "#17201b" }),
         mouseout: () => state.featureLayer.resetStyle(layer),
       });
-      layer.bindTooltip(`${profile.name}<br>${profile.english}`, {
+      layer.bindTooltip(districtTooltip(profile), {
         sticky: true,
         direction: "top",
         opacity: 0.9,
@@ -319,23 +716,18 @@ function poiGlyph(type) {
 }
 
 function poiLabel(type) {
-  return {
-    transit: "Transit",
-    park: "Park",
-    school: "School",
-    hospital: "Hospital",
-    service: "Service",
-  }[type];
+  return currentCopy().poi[type] || type;
 }
 
 function renderModes() {
   els.modeStack.innerHTML = "";
   modes.forEach((mode) => {
+    const content = modeCopy(mode);
     const button = document.createElement("button");
     button.className = "mode-button";
     button.classList.toggle("is-active", mode.id === state.mode);
     button.type = "button";
-    button.innerHTML = `<strong>${mode.title}</strong><span>${mode.description}</span>`;
+    button.innerHTML = `<strong>${content.title}</strong><span>${content.description}</span>`;
     button.addEventListener("click", () => {
       state.mode = mode.id;
       state.activeStory = mode.id === "story" ? state.activeStory || "east-corridor" : null;
@@ -355,7 +747,7 @@ function renderDistrictList() {
       .includes(query),
   );
 
-  els.featureCount.textContent = `${rows.length} เขต`;
+  els.featureCount.textContent = `${formatNumber(rows.length)} ${currentCopy().units.districts}`;
   els.districtList.innerHTML = "";
 
   rows.forEach((profile) => {
@@ -366,8 +758,8 @@ function renderDistrictList() {
     button.innerHTML = `
       <span>
         <span class="district-code">${profile.code}</span>
-        <strong>เขต${profile.name}</strong>
-        <span>${profile.english} · ${profile.zoning}</span>
+        <strong>${districtDisplayName(profile)}</strong>
+        <span>${districtSecondaryText(profile)}</span>
       </span>
       <span class="risk-pill pill-${riskClass(profile.flood)}">${riskLabel(profile.flood)}</span>
     `;
@@ -378,15 +770,19 @@ function renderDistrictList() {
 
 function nearestSummary(accessibility) {
   const nearest = accessibility?.nearest_meters || {};
+  const labels = currentCopy().poi;
+  const units = currentCopy().units;
   return [
-    ["transit", "transit"],
-    ["park", "park"],
-    ["school", "school"],
-    ["hospital", "hospital"],
+    ["transit", labels.transit],
+    ["park", labels.park],
+    ["school", labels.school],
+    ["hospital", labels.hospital],
   ]
     .map(([key, label]) => {
       const value = nearest[key];
-      return `${label} ${Number.isFinite(value) ? `${value.toLocaleString()}m` : "n/a"}`;
+      return `${label} ${
+        Number.isFinite(value) ? `${formatNumber(value)}${units.metersShort}` : units.notAvailable
+      }`;
     })
     .join(" · ");
 }
@@ -395,22 +791,23 @@ function renderInspector() {
   const profile = getProfile(state.selectedCode);
   const accessibility = profile.raw?.accessibility;
   els.selectedCode.textContent = profile.code;
-  els.selectedName.textContent = `เขต${profile.name}`;
-  els.selectedSummary.textContent = `${profile.english} · ${profile.zoning}. Flood/zoning เป็น scenario; accessibility เป็น OSM walking-distance proxy (${nearestSummary(
-    accessibility,
-  )}).`;
+  els.selectedName.textContent = districtDisplayName(profile);
+  els.selectedSummary.textContent = currentCopy()
+    .inspector.summary.replace("{english}", profile.english)
+    .replace("{zoning}", profile.zoning)
+    .replace("{nearest}", nearestSummary(accessibility));
   els.downloadPng.href = profile.png;
   els.downloadPdf.href = profile.pdf;
 
   els.metricStack.innerHTML = [
-    ["Flood exposure (scenario)", profile.flood, floodColor(profile.flood)],
-    ["Accessibility proxy (OSM)", profile.access, accessColor(profile.access)],
-    ["Development pressure (scenario)", profile.pressure, "#6952a3"],
+    [currentCopy().metrics.flood, profile.flood, floodColor(profile.flood)],
+    [currentCopy().metrics.access, profile.access, accessColor(profile.access)],
+    [currentCopy().metrics.pressure, profile.pressure, "#6952a3"],
   ]
     .map(
       ([label, value, color]) => `
         <div class="metric">
-          <div class="metric-head"><span>${label}</span><span>${value}/100</span></div>
+          <div class="metric-head"><span>${label}</span><span>${formatNumber(value)}/100</span></div>
           <div class="metric-bar"><div class="metric-fill" style="width:${value}%;background:${color}"></div></div>
         </div>
       `,
@@ -421,11 +818,12 @@ function renderInspector() {
 function renderStories() {
   els.storyList.innerHTML = "";
   storyScenes.forEach((scene) => {
+    const content = storyCopy(scene);
     const button = document.createElement("button");
     button.className = "story-button";
     button.classList.toggle("is-active", scene.id === state.activeStory);
     button.type = "button";
-    button.innerHTML = `<strong>${scene.title}</strong><span>${scene.description}</span>`;
+    button.innerHTML = `<strong>${content.title}</strong><span>${content.description}</span>`;
     button.addEventListener("click", () => {
       state.mode = "story";
       state.activeStory = scene.id;
@@ -438,32 +836,33 @@ function renderStories() {
 }
 
 function renderLegend() {
+  const legend = currentCopy().legend;
   const title =
     state.mode === "access"
-      ? "Accessibility proxy score"
+      ? legend.accessTitle
       : state.mode === "story"
-        ? "Story focus"
-        : "Flood exposure scenario";
+        ? legend.storyTitle
+        : legend.floodTitle;
   const rows =
     state.mode === "access"
       ? [
-          ["#185f7a", "สูงมาก"],
-          ["#2f91a5", "สูง"],
-          ["#79a85c", "กลาง"],
-          ["#b24a43", "ต่ำ"],
-          ["#23758b", "รัศมี 450/900/1350m"],
+          ["#185f7a", legend.accessRows.veryHigh],
+          ["#2f91a5", legend.accessRows.high],
+          ["#79a85c", legend.accessRows.medium],
+          ["#b24a43", legend.accessRows.low],
+          ["#23758b", legend.accessRows.rings],
         ]
       : state.mode === "story"
         ? [
-            ["#d45b3f", "เขตใน story"],
-            ["#8fa098", "เขตอื่น"],
-            ["#23758b", "POI / service rings"],
+            ["#d45b3f", legend.storyRows.focus],
+            ["#8fa098", legend.storyRows.other],
+            ["#23758b", legend.storyRows.rings],
           ]
         : [
-            ["#9d2f35", "เสี่ยงสูงมาก"],
-            ["#d36b3d", "เสี่ยงสูง"],
-            ["#d9a441", "กลาง"],
-            ["#2c7f62", "ต่ำ"],
+            ["#9d2f35", legend.floodRows.veryHigh],
+            ["#d36b3d", legend.floodRows.high],
+            ["#d9a441", legend.floodRows.medium],
+            ["#2c7f62", legend.floodRows.low],
           ];
 
   els.legend.innerHTML = `<strong>${title}</strong>${rows
@@ -476,13 +875,15 @@ function renderLegend() {
 
 function renderDataFreshness() {
   if (!els.dataFreshness || !state.manifest) return;
-  const generated = new Intl.DateTimeFormat("th-TH", {
+  const generated = new Intl.DateTimeFormat(languageLocale(), {
     dateStyle: "medium",
     timeStyle: "short",
     timeZone: "Asia/Bangkok",
   }).format(new Date(state.manifest.generated_at));
   const counts = state.manifest.record_counts || {};
-  els.dataFreshness.textContent = `Snapshot ${generated} · ${counts.poi_total?.toLocaleString() || 0} POI · OpenStreetMap/ODbL`;
+  els.dataFreshness.textContent = `${currentCopy().freshness.label} ${generated} · ${formatNumber(
+    counts.poi_total,
+  )} POI · OpenStreetMap/ODbL`;
 }
 
 function selectDistrict(code, options = {}) {
@@ -512,10 +913,14 @@ function render() {
   renderDataFreshness();
 
   const mode = modes.find((item) => item.id === state.mode);
-  els.activeTitle.textContent = mode.title;
+  els.activeTitle.textContent = modeCopy(mode).title;
 
   if (state.featureLayer) {
     state.featureLayer.setStyle(districtStyle);
+    state.featureLayer.eachLayer((layer) => {
+      const profile = getProfile(layer.feature.properties.dcode);
+      layer.setTooltipContent(districtTooltip(profile));
+    });
   }
   renderAccessLayers();
 }
@@ -524,8 +929,8 @@ function showError(error) {
   document.querySelector(".map-stage").innerHTML = `
     <div class="map-error">
       <div>
-        <strong>Map failed to load</strong>
-        <p>${error.message}. ตรวจว่า static data snapshot มีครบ และเชื่อมต่อ CDN สำหรับ Leaflet/TopoJSON ได้</p>
+        <strong>${currentCopy().errors.mapTitle}</strong>
+        <p>${error.message}. ${currentCopy().errors.mapMessage}</p>
       </div>
     </div>
   `;
@@ -533,8 +938,9 @@ function showError(error) {
 
 async function init() {
   try {
+    applyStaticTranslations();
     if (!window.L || !window.topojson) {
-      throw new Error("Leaflet or TopoJSON CDN is unavailable");
+      throw new Error(currentCopy().errors.cdnUnavailable);
     }
     setupMap();
     await loadData();
@@ -548,6 +954,13 @@ async function init() {
 els.districtSearch.addEventListener("input", (event) => {
   state.query = event.target.value;
   renderDistrictList();
+});
+
+[
+  [els.langTh, "th"],
+  [els.langEn, "en"],
+].forEach(([button, language]) => {
+  button.addEventListener("click", () => setLanguage(language));
 });
 
 [els.toggleFlood, els.toggleAccess, els.togglePoi].forEach((input) => {

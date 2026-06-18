@@ -73,6 +73,52 @@ input {
   margin-bottom: 26px;
 }
 
+.brand-topline {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.brand-topline .eyebrow {
+  margin-bottom: 0;
+}
+
+.language-toggle {
+  align-items: center;
+  background: #edf4ef;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  padding: 3px;
+}
+
+.language-option {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  min-width: 34px;
+  padding: 7px 8px;
+}
+
+.language-option.is-active {
+  background: var(--green);
+  color: #fff;
+}
+
+.language-option:focus-visible {
+  outline: 3px solid rgba(23, 107, 77, 0.22);
+  outline-offset: 2px;
+}
+
 .eyebrow {
   color: var(--green);
   font-size: 12px;

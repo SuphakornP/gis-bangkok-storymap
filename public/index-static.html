@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bangkok GIS Risk + Access Prototype</title>
+    <title>Bangkok GIS ความเสี่ยง + การเข้าถึง Prototype</title>
     <meta
       name="description"
-      content="Interactive Bangkok GIS prototype using district boundaries, flood x zoning scenarios, accessibility rings, and story-map views."
+      content="Prototype แผนที่ GIS กรุงเทพฯ สำหรับขอบเขตเขต, flood x zoning scenario, accessibility rings และ story map."
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIINfQPDzTO9iAA6tmI3H9JZHczC9P4bJdg="
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script
       defer
@@ -29,73 +30,113 @@
   </head>
   <body>
     <div class="map-app">
-      <aside class="control-panel" aria-label="Map controls">
+      <aside class="control-panel" aria-label="ตัวควบคุมแผนที่" data-i18n-aria-label="aria.controlPanel">
         <header class="brand-block">
-          <p class="eyebrow">Bangkok GIS prototype</p>
+          <div class="brand-topline">
+            <p class="eyebrow" data-i18n="brand.eyebrow">ต้นแบบ Bangkok GIS</p>
+            <div
+              class="language-toggle"
+              aria-label="เลือกภาษา"
+              data-i18n-aria-label="languageToggle.label"
+            >
+              <button
+                id="langTh"
+                class="language-option is-active"
+                type="button"
+                data-lang="th"
+                aria-pressed="true"
+              >
+                TH
+              </button>
+              <button
+                id="langEn"
+                class="language-option"
+                type="button"
+                data-lang="en"
+                aria-pressed="false"
+              >
+                EN
+              </button>
+            </div>
+          </div>
           <h1>
-            <span>Flood</span>
-            <span>Zoning</span>
-            <span>Access</span>
+            <span data-i18n="brand.titleFlood">น้ำท่วม</span>
+            <span data-i18n="brand.titleZoning">ผังเมือง</span>
+            <span data-i18n="brand.titleAccess">การเข้าถึง</span>
           </h1>
           <p class="lead">
-            Boundary กทม. จาก prasertcbs/thailand_gis<br />
-            ใช้ static data snapshot เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง
+            <span data-i18n="brand.leadBoundary">Boundary กทม. จาก prasertcbs/thailand_gis</span><br />
+            <span data-i18n="brand.leadSnapshot"
+              >ใช้ static data snapshot เพื่อซ้อนชั้นข้อมูลและเล่าเรื่องเมือง</span
+            >
           </p>
         </header>
 
         <section aria-labelledby="mode-heading">
-          <h2 id="mode-heading">โจทย์ที่ render บนแผนที่</h2>
+          <h2 id="mode-heading" data-i18n="sections.mode">โจทย์ที่แสดงบนแผนที่</h2>
           <div class="mode-stack" id="modeStack"></div>
         </section>
 
         <section aria-labelledby="search-heading">
           <div class="section-row">
-            <h2 id="search-heading">ค้นหาเขต</h2>
+            <h2 id="search-heading" data-i18n="sections.search">ค้นหาเขต</h2>
             <span id="featureCount">50 เขต</span>
           </div>
           <label class="search-box">
-            <span>ชื่อเขตหรือรหัส</span>
-            <input id="districtSearch" type="search" placeholder="บางนา, 1047, Khlong Toei" />
+            <span data-i18n="search.label">ชื่อเขตหรือรหัส</span>
+            <input
+              id="districtSearch"
+              type="search"
+              placeholder="บางนา, 1047, Khlong Toei"
+              data-i18n-placeholder="search.placeholder"
+            />
           </label>
           <div class="district-list" id="districtList"></div>
         </section>
 
         <section aria-labelledby="data-heading" class="data-note">
-          <h2 id="data-heading">ข้อมูลใน prototype</h2>
+          <h2 id="data-heading" data-i18n="sections.data">ข้อมูลในต้นแบบ</h2>
           <p>
-            ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. POI และ accessibility proxy
-            มาจาก OpenStreetMap snapshot. น้ำท่วม, zoning และ development pressure
-            ยังเป็น scenario layer สำหรับออกแบบ workflow.
+            <span data-i18n="dataNote.boundaries"
+              >ขอบเขตเขตเป็นข้อมูลจริงจาก TopoJSON. POI และตัวแทนการเข้าถึง</span
+            >
+            <span data-i18n="dataNote.snapshot"
+              >มาจาก OpenStreetMap snapshot. น้ำท่วม, ผังเมือง และแรงกดดันการพัฒนา</span
+            >
+            <span data-i18n="dataNote.scenario"
+              >ยังเป็นชั้นข้อมูลจำลองสำหรับออกแบบเวิร์กโฟลว์.</span
+            >
           </p>
           <p class="data-freshness" id="dataFreshness">กำลังโหลด metadata...</p>
           <a
             href="https://github.com/prasertcbs/thailand_gis/tree/main/bangkok/district"
             target="_blank"
             rel="noreferrer"
-            >Bangkok district source</a
+            data-i18n="dataNote.sourceLink"
+            >แหล่งข้อมูลขอบเขตเขตกรุงเทพฯ</a
           >
         </section>
       </aside>
 
-      <main class="map-stage" aria-label="Bangkok interactive map">
+      <main class="map-stage" aria-label="แผนที่กรุงเทพฯ แบบโต้ตอบ" data-i18n-aria-label="aria.mapStage">
         <div id="map" class="map-canvas"></div>
         <div class="map-topbar">
           <div>
-            <p class="eyebrow">Active view</p>
-            <strong id="activeTitle">Flood x Zoning</strong>
+            <p class="eyebrow" data-i18n="topbar.activeView">มุมมองปัจจุบัน</p>
+            <strong id="activeTitle">น้ำท่วม x ผังเมือง</strong>
           </div>
-          <div class="layer-toggles" aria-label="Layer toggles">
+          <div class="layer-toggles" aria-label="สวิตช์เปิดปิดชั้นข้อมูล" data-i18n-aria-label="aria.layerToggles">
             <label>
               <input id="toggleFlood" type="checkbox" checked />
-              Flood
+              <span data-i18n="layers.flood">น้ำท่วม</span>
             </label>
             <label>
               <input id="toggleAccess" type="checkbox" checked />
-              Access proxy
+              <span data-i18n="layers.access">ตัวแทนการเข้าถึง</span>
             </label>
             <label>
               <input id="togglePoi" type="checkbox" checked />
-              POI
+              <span data-i18n="layers.poi">POI</span>
             </label>
           </div>
         </div>
@@ -103,37 +144,45 @@
         <div class="legend" id="legend"></div>
       </main>
 
-      <aside class="inspector" aria-label="Selected district details">
+      <aside class="inspector" aria-label="รายละเอียดเขตที่เลือก" data-i18n-aria-label="aria.inspector">
         <section class="district-card">
           <p class="eyebrow" id="selectedCode">1047</p>
           <h2 id="selectedName">เขตบางนา</h2>
           <p id="selectedSummary">
-            เลือกเขตบนแผนที่เพื่อดู flood, zoning และ accessibility score
+            เลือกเขตบนแผนที่เพื่อดูคะแนนน้ำท่วม, ผังเมือง และการเข้าถึง
           </p>
 
           <div class="metric-stack" id="metricStack"></div>
 
           <div class="download-actions">
-            <a id="downloadPng" target="_blank" rel="noreferrer">PNG map</a>
-            <a id="downloadPdf" target="_blank" rel="noreferrer">PDF zoning</a>
+            <a id="downloadPng" target="_blank" rel="noreferrer" data-i18n="downloads.png"
+              >แผนที่ PNG</a
+            >
+            <a id="downloadPdf" target="_blank" rel="noreferrer" data-i18n="downloads.pdf"
+              >ผังเมือง PDF</a
+            >
           </div>
         </section>
 
         <section class="story-panel">
           <div class="section-row">
-            <h2>Story map</h2>
-            <span>3 scenes</span>
+            <h2 data-i18n="sections.story">แผนที่เล่าเรื่อง</h2>
+            <span data-i18n="story.sceneCount">3 ฉาก</span>
           </div>
           <div class="story-list" id="storyList"></div>
         </section>
 
         <section class="workflow-panel">
-          <h2>Next GIS workflow</h2>
+          <h2 data-i18n="sections.workflow">เวิร์กโฟลว์ GIS ถัดไป</h2>
           <ol>
-            <li>Automation ดึง OSM POI เป็น static snapshot ก่อน render</li>
-            <li>แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data</li>
-            <li>ต่อ zoning polygon หรือ digitize จากผังเมือง PDF</li>
-            <li>คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี</li>
+            <li data-i18n="workflow.refresh">Automation ดึง OSM POI เป็น static snapshot ก่อนแสดงผล</li>
+            <li data-i18n="workflow.flood">
+              แทน scenario score ด้วย flood layer จาก BMA หรือ sensor/complaint data
+            </li>
+            <li data-i18n="workflow.zoning">ต่อ zoning polygon หรือ digitize จากผังเมือง PDF</li>
+            <li data-i18n="workflow.isochrone">
+              คำนวณ isochrone จริงด้วย network graph แทนวงกลมรัศมี
+            </li>
           </ol>
         </section>
       </aside>
